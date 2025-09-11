@@ -1,21 +1,30 @@
 /* Monastery360 - Main Stylesheet */
 :root {
 
-    --text-dark: #2C1810;            /* Dark brown */
-    --text-light: #6B4E3D;           /* Medium brown */
-    --bg-light: #FFF8DC;             /* Cornsilk */
-    --bg-cream: #F5F5DC;             /* Beige */
+    --text-dark: #2C1810;
+    /* Dark brown */
+    --text-light: #6B4E3D;
+    /* Medium brown */
+    --bg-light: #FFF8DC;
+    /* Cornsilk */
+    --bg-cream: #F5F5DC;
+    /* Beige */
     --white: #FFFFFF;
-    --red-accent: #DC143C;           /* Prayer flag red */
-    --blue-accent: #1E3A8A;          /* Prayer flag blue */
-    --yellow-accent: #FFD700;        /* Prayer flag yellow */
-    --green-accent: #228B22;         /* Prayer flag green */
-    --shadow: 0 4px 20px rgba(0,0,0,0.1);
-    --shadow-hover: 0 8px 30px rgba(0,0,0,0.15);
+    --red-accent: #DC143C;
+    /* Prayer flag red */
+    --blue-accent: #1E3A8A;
+    /* Prayer flag blue */
+    --yellow-accent: #FFD700;
+    /* Prayer flag yellow */
+    --green-accent: #228B22;
+    /* Prayer flag green */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--text-dark));
     --bg-image: url('abhishek-singh-xJDJ4PxkHvU-unsplash.jpg');
 }
+
 body {
     background-image: var(--bg-image);
     background-size: cover;
@@ -110,8 +119,15 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 .nav-menu {
@@ -177,28 +193,64 @@ body {
     overflow: hidden;
 }
 
+/*my edit*/
 .hero-bg {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/images/ui/sikkim-monastery-hero.jpg') center/cover;
-    opacity: 0.3;
+    background: url('sikkim.jpg') center/cover;
     z-index: 0;
+    opacity: 0;
+    /* start hidden */
+    animation: fadeInHero 1.5s ease forwards;
+    /* fade-in effect */
+}
+
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* default overlay */
+    transition: background 0.5s ease;
+    /* smooth hover transition */
+}
+
+.hero-bg:hover::after {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .hero-content {
-    z-index: 1;
+    position: relative;
+    z-index: 2;
     max-width: 900px;
     padding: 2rem;
+}
+
+/* Fade-in keyframes */
+@keyframes fadeInHero {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+        /* slight zoom-out effect */
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .hero-content h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
@@ -225,7 +277,7 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--yellow-accent);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .stat-label {
@@ -242,7 +294,9 @@ body {
     flex-wrap: wrap;
 }
 
-.btn-primary, .btn-secondary, .btn-audio {
+.btn-primary,
+.btn-secondary,
+.btn-audio {
     padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
@@ -275,7 +329,9 @@ body {
     color: white;
 }
 
-.btn-primary:hover, .btn-secondary:hover, .btn-audio:hover {
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-audio:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
 }
@@ -291,9 +347,22 @@ body {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-    40% { transform: translateX(-50%) translateY(-10px); }
-    60% { transform: translateX(-50%) translateY(-5px); }
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
 }
 
 /* Features Section */
@@ -732,7 +801,7 @@ body {
     .hamburger {
         display: flex;
     }
-    
+
     .nav-menu {
         position: fixed;
         top: 100%;
@@ -747,26 +816,26 @@ body {
         visibility: hidden;
         transition: all 0.3s ease;
     }
-    
+
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
     }
-    
+
     .hero-stats {
         gap: 2rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .sih-content {
         grid-template-columns: 1fr;
         text-align: center;
