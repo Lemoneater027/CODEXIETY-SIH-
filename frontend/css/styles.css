@@ -259,8 +259,8 @@ body {
 }
 
 .btn-primary {
-    background: #000;
-    color: var(--primary-color);
+    background: blue;
+    color: white;
     box-shadow: var(--shadow);
 }
 
@@ -403,7 +403,7 @@ body {
 }
 
 .feature-btn {
-    background: var(--gradient-primary);
+    background: black;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -771,4 +771,28 @@ body {
         grid-template-columns: 1fr;
         text-align: center;
     }
+}
+.highlight {
+  color: #FFD700;        /* golden yellow */
+  font-weight: bold;     /* mota text */ /* underline */
+}
+.feature-card[data-feature="interactive-map"] {
+  background-image: url("interactive\ map\ symbol.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+}
+
+.feature-card[data-feature="interactive-map"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* dark overlay */
+  z-index: 0;
+}
+
+.feature-card * {
+  position: relative;
+  z-index: 1;  /* taaki text overlay ke upar aaye */
 }
