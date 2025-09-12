@@ -1,30 +1,21 @@
 /* Monastery360 - Main Stylesheet */
 :root {
 
-    --text-dark: #2C1810;
-    /* Dark brown */
-    --text-light: #6B4E3D;
-    /* Medium brown */
-    --bg-light: #FFF8DC;
-    /* Cornsilk */
-    --bg-cream: #F5F5DC;
-    /* Beige */
+    --text-dark: #2C1810;            /* Dark brown */
+    --text-light: #6B4E3D;           /* Medium brown */
+    --bg-light: #FFF8DC;             /* Cornsilk */
+    --bg-cream: #F5F5DC;             /* Beige */
     --white: #FFFFFF;
-    --red-accent: #DC143C;
-    /* Prayer flag red */
-    --blue-accent: #1E3A8A;
-    /* Prayer flag blue */
-    --yellow-accent: #FFD700;
-    /* Prayer flag yellow */
-    --green-accent: #228B22;
-    /* Prayer flag green */
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --red-accent: #DC143C;           /* Prayer flag red */
+    --blue-accent: #1E3A8A;          /* Prayer flag blue */
+    --yellow-accent: #FFD700;        /* Prayer flag yellow */
+    --green-accent: #228B22;         /* Prayer flag green */
+    --shadow: 0 4px 20px rgba(0,0,0,0.1);
+    --shadow-hover: 0 8px 30px rgba(0,0,0,0.15);
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--text-dark));
     --bg-image: url('abhishek-singh-xJDJ4PxkHvU-unsplash.jpg');
 }
-
 body {
     background-image: var(--bg-image);
     background-size: cover;
@@ -69,13 +60,18 @@ body {
 }
 
 /* Navigation */
+/*my edit*/
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(6px);
+    padding: 15px 40px;
+    
+    
+    
     box-shadow: var(--shadow);
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
     transition: all 0.3s ease;
@@ -85,6 +81,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
+    gap: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -103,7 +100,7 @@ body {
 }
 
 .nav-logo h2 {
-    color: var(--primary-color);
+    color: yellow;
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -119,15 +116,8 @@ body {
 }
 
 @keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 .nav-menu {
@@ -139,7 +129,7 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--text-dark);
+    color: #ffffff;
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.3s ease;
@@ -147,7 +137,7 @@ body {
 }
 
 .nav-menu a:hover {
-    color: var(--primary-color);
+    color: orange;
 }
 
 .nav-menu a::after {
@@ -192,7 +182,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
 /*my edit*/
 .hero-bg {
     position: absolute;
@@ -250,7 +239,7 @@ body {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-content p {
@@ -277,7 +266,7 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--yellow-accent);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .stat-label {
@@ -294,9 +283,7 @@ body {
     flex-wrap: wrap;
 }
 
-.btn-primary,
-.btn-secondary,
-.btn-audio {
+.btn-primary, .btn-secondary, .btn-audio {
     padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
@@ -329,9 +316,7 @@ body {
     color: white;
 }
 
-.btn-primary:hover,
-.btn-secondary:hover,
-.btn-audio:hover {
+.btn-primary:hover, .btn-secondary:hover, .btn-audio:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
 }
@@ -347,22 +332,9 @@ body {
 }
 
 @keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
-
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
 }
 
 /* Features Section */
@@ -435,20 +407,24 @@ body {
     justify-content: center;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
-    color: white;
+    color: orange;
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--secondary-color);
+    color: rgb(254, 246, 127);
     margin-bottom: 1rem;
 }
 
 .feature-card p {
-    color: var(--text-light);
+    color: white;
     margin-bottom: 1.5rem;
     line-height: 1.7;
+     /*  glowing text */
+     text-shadow: 0 0 3px #ffffff97, 
+     0 0 6px #ffffff88, 
+     0 0 9px #ffffff8f;
 }
 
 .feature-list {
@@ -458,9 +434,13 @@ body {
 
 .feature-list li {
     padding: 0.5rem 0;
-    color: var(--text-dark);
+    color: white;
     position: relative;
     padding-left: 25px;
+     /*  glowing text */
+     text-shadow: 0 0 3px #ffffffab, 
+     0 0 6px #ffffff82, 
+     0 0 9px #ffffff88;
 }
 
 .feature-list li::before {
@@ -472,9 +452,11 @@ body {
 }
 
 .feature-btn {
-    background: black;
+ Extra
+    background: rgba(255, 255, 255, 0.4);
+  main
     color: white;
-    border: none;
+    border: 2px solid rgb(255, 255, 255);
     padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
@@ -485,11 +467,21 @@ body {
     gap: 0.5rem;
     width: 100%;
     transition: all 0.3s ease;
+
+    /*  glowing text */
+    text-shadow: 0 0 5px #fff, 
+                 0 0 10px #ffffff, 
+                 0 0 20px #ffffff;
 }
 
 .feature-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
+    /* stronger glow on hover */
+    text-shadow: 0 0 10px #fff, 
+                 0 0 20px #ffffff, 
+                 0 0 40px #ffffff;
 }
 
 /* Featured Monasteries Section */
@@ -801,7 +793,7 @@ body {
     .hamburger {
         display: flex;
     }
-
+    
     .nav-menu {
         position: fixed;
         top: 100%;
@@ -816,26 +808,26 @@ body {
         visibility: hidden;
         transition: all 0.3s ease;
     }
-
+    
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
     }
-
+    
     .hero-stats {
         gap: 2rem;
     }
-
+    
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-
+    
     .features-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .sih-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -845,21 +837,55 @@ body {
   color: #FFD700;        /* golden yellow */
   font-weight: bold;     /* mota text */ /* underline */
 }
-.feature-card[data-feature="interactive-map"] {
-  background-image: url("interactive\ map\ symbol.png");
+.feature-card[data-feature="interactive-map"] 
+Extra
+  background-image: url("ugyen-wangdi-kJn8iVl0stU-unsplash.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
-.feature-card[data-feature="interactive-map"]::before {
+.feature-card[data-feature="interactive-map"]::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4); /* dark overlay */
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
   z-index: 0;
 }
+.feature-card[data-feature="digital-archives"] {
+    background-image: url("dana-ward-tDOrQDr11oc-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="digital-archives"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    z-index: 0;
+  }
+
+
+  .feature-card[data-feature="virtual-tours"] {
+    background-image: url("pexels-photo-123335.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="virtual-tours"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    z-index: 0;
+  }
+ main
 
 .feature-card * {
   position: relative;
