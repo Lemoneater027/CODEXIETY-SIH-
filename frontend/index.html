@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monastery360 - Digital Heritage Platform for Sikkim's Monasteries</title>
-    <meta name="description" content="Explore Sikkim's 200+ monasteries through immersive 360° virtual tours, interactive maps, and cultural archives">
+    <meta name="description"
+        content="Explore Sikkim's 200+ monasteries through immersive 360° virtual tours, interactive maps, and cultural archives">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <select id="languageSelect" onchange="switchLanguage()">
-            <option value="en">English</option>
-            <option value="ne">नेपाली</option>
-            <option value="hi">हिंदी</option>
-        </select>
-    </div>
 
+<body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="assets/icons/monastery360-logo.png" alt="Monastery360">
                 <h2 data-translate="nav-title">Monastery360</h2>
-                
+
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" data-translate="nav-home">Home</a></li>
@@ -50,8 +45,12 @@
     <section id="home" class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1 data-translate="hero-title">Discover Sikkim's Sacred Monasteries</h1>
-            <p data-translate="hero-subtitle">Immersive 360° virtual tours of 200+ monasteries preserving centuries of spiritual heritage</p>
+            <h1 data-translate="hero-title">
+                Discover <span class="highlight">SIKKIM'S</span> Sacred Monasteries
+            </h1>
+
+            <p data-translate="hero-subtitle">Immersive 360° virtual tours of 200+ monasteries preserving centuries of
+                spiritual heritage</p>
             <div class="hero-stats">
                 <div class="stat">
                     <span class="stat-number">200+</span>
@@ -90,15 +89,17 @@
     <section class="features">
         <div class="container">
             <h2 data-translate="features-title">Monastery360 Features</h2>
-            <p class="features-subtitle" data-translate="features-subtitle">Preserving Sikkim's spiritual heritage through cutting-edge technology</p>
-            
+            <p class="features-subtitle" data-translate="features-subtitle">Preserving Sikkim's spiritual heritage
+                through cutting-edge technology</p>
+
             <div class="features-grid">
                 <div class="feature-card" data-feature="virtual-tours">
                     <div class="feature-icon">
                         <i class="fas fa-vr-cardboard"></i>
                     </div>
                     <h3 data-translate="feature-vr-title">360° Virtual Tours</h3>
-                    <p data-translate="feature-vr-desc">Immersive panoramic views of monastery interiors and surroundings with narrated walkthroughs</p>
+                    <p data-translate="feature-vr-desc">Immersive panoramic views of monastery interiors and
+                        surroundings with narrated walkthroughs</p>
                     <ul class="feature-list">
                         <li data-translate="feature-vr-1">High-resolution 360° panoramas</li>
                         <li data-translate="feature-vr-2">Interactive hotspots</li>
@@ -116,7 +117,8 @@
                         <i class="fas fa-map-marked-alt"></i>
                     </div>
                     <h3 data-translate="feature-map-title">Interactive Heritage Map</h3>
-                    <p data-translate="feature-map-desc">Geo-tagged monastery locations with travel routes and nearby attractions</p>
+                    <p data-translate="feature-map-desc">Geo-tagged monastery locations with travel routes and nearby
+                        attractions</p>
                     <ul class="feature-list">
                         <li data-translate="feature-map-1">GPS-enabled monastery locations</li>
                         <li data-translate="feature-map-2">Travel routes & directions</li>
@@ -134,7 +136,8 @@
                         <i class="fas fa-archive"></i>
                     </div>
                     <h3 data-translate="feature-archives-title">Digital Archives</h3>
-                    <p data-translate="feature-archives-desc">Digitally preserved manuscripts, murals, and historical documents with AI-powered search</p>
+                    <p data-translate="feature-archives-desc">Digitally preserved manuscripts, murals, and historical
+                        documents with AI-powered search</p>
                     <ul class="feature-list">
                         <li data-translate="feature-archives-1">Scanned rare manuscripts</li>
                         <li data-translate="feature-archives-2">Historical murals & artwork</li>
@@ -152,7 +155,8 @@
                         <i class="fas fa-headphones"></i>
                     </div>
                     <h3 data-translate="feature-audio-title">Smart Audio Guide</h3>
-                    <p data-translate="feature-audio-desc">Location-based audio guides with offline mode for remote monastery visits</p>
+                    <p data-translate="feature-audio-desc">Location-based audio guides with offline mode for remote
+                        monastery visits</p>
                     <ul class="feature-list">
                         <li data-translate="feature-audio-1">GPS-triggered audio content</li>
                         <li data-translate="feature-audio-2">Multi-language support</li>
@@ -170,7 +174,8 @@
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3 data-translate="feature-calendar-title">Cultural Calendar</h3>
-                    <p data-translate="feature-calendar-desc">Live events, festivals, and rituals schedule with booking and participation options</p>
+                    <p data-translate="feature-calendar-desc">Live events, festivals, and rituals schedule with booking
+                        and participation options</p>
                     <ul class="feature-list">
                         <li data-translate="feature-calendar-1">Festival schedules</li>
                         <li data-translate="feature-calendar-2">Ritual timings</li>
@@ -188,7 +193,8 @@
                         <i class="fas fa-route"></i>
                     </div>
                     <h3 data-translate="feature-travel-title">Travel Integration</h3>
-                    <p data-translate="feature-travel-desc">Integrated local transport, tourism services, and accommodation booking</p>
+                    <p data-translate="feature-travel-desc">Integrated local transport, tourism services, and
+                        accommodation booking</p>
                     <ul class="feature-list">
                         <li data-translate="feature-travel-1">Transport booking</li>
                         <li data-translate="feature-travel-2">Hotel reservations</li>
@@ -209,11 +215,11 @@
         <div class="container">
             <h2 data-translate="featured-title">Featured Monasteries</h2>
             <p data-translate="featured-subtitle">Discover the most significant monasteries of Sikkim</p>
-            
+
             <div class="monasteries-carousel" id="monasteries-carousel">
                 <!-- Monastery cards will be loaded dynamically from monastery-data.js -->
             </div>
-            
+
             <div class="carousel-controls">
                 <button class="carousel-btn prev" onclick="previousSlide()">
                     <i class="fas fa-chevron-left"></i>
@@ -222,7 +228,7 @@
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
-            
+
             <div class="view-all-btn">
                 <a href="monasteries.html" class="btn-primary">
                     <span data-translate="btn-view-all">View All Monasteries</span>
@@ -242,31 +248,35 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <h3 data-translate="impact-tourism-title">Boost Tourism</h3>
-                    <p data-translate="impact-tourism-desc">Making monasteries more accessible to global visitors through immersive digital experiences</p>
+                    <p data-translate="impact-tourism-desc">Making monasteries more accessible to global visitors
+                        through immersive digital experiences</p>
                 </div>
-                
+
                 <div class="impact-card">
                     <div class="impact-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 data-translate="impact-preservation-title">Preserve Heritage</h3>
-                    <p data-translate="impact-preservation-desc">Digitally safeguarding endangered cultural assets for future generations</p>
+                    <p data-translate="impact-preservation-desc">Digitally safeguarding endangered cultural assets for
+                        future generations</p>
                 </div>
-                
+
                 <div class="impact-card">
                     <div class="impact-icon">
                         <i class="fas fa-hands-helping"></i>
                     </div>
                     <h3 data-translate="impact-community-title">Empower Communities</h3>
-                    <p data-translate="impact-community-desc">Supporting local communities through participatory archiving and cultural storytelling</p>
+                    <p data-translate="impact-community-desc">Supporting local communities through participatory
+                        archiving and cultural storytelling</p>
                 </div>
-                
+
                 <div class="impact-card">
                     <div class="impact-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3 data-translate="impact-education-title">Educational Outreach</h3>
-                    <p data-translate="impact-education-desc">Supporting spiritual exploration and cultural education worldwide</p>
+                    <p data-translate="impact-education-desc">Supporting spiritual exploration and cultural education
+                        worldwide</p>
                 </div>
             </div>
         </div>
@@ -281,10 +291,15 @@
                 </div>
                 <div class="sih-text">
                     <h3>Smart India Hackathon 2025</h3>
-                    <p><strong>Problem Statement:</strong> Digitize and Showcase Monasteries of Sikkim for Tourism and Cultural Preservation</p>
-                    <p><strong>Organization:</strong> Government of Sikkim - Department of Higher & Technical Education</p>
+                    <p><strong>Problem Statement:</strong> Digitize and Showcase Monasteries of Sikkim for Tourism and
+                        Cultural Preservation</p>
+                    <p><strong>Organization:</strong> Government of Sikkim - Department of Higher & Technical Education
+                    </p>
                     <p><strong>Theme:</strong> Travel & Tourism | <strong>Category:</strong> Software</p>
-                    <p><strong>Team:</strong> [Your Team Name] | <strong>College:</strong> Assam Downtown University</p>
+
+                  
+                    <p><strong>Team:</strong> CODEXIETY | <strong>College:</strong> Assam Down Town University</p>
+
                 </div>
             </div>
         </div>
@@ -296,7 +311,8 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Monastery360</h4>
-                    <p data-translate="footer-desc">Preserving Sikkim's spiritual heritage through immersive digital experiences</p>
+                    <p data-translate="footer-desc">Preserving Sikkim's spiritual heritage through immersive digital
+                        experiences</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -304,7 +320,7 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4 data-translate="footer-explore">Explore</h4>
                     <ul>
@@ -314,7 +330,7 @@
                         <li><a href="archives.html" data-translate="footer-archives">Digital Archives</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4 data-translate="footer-plan">Plan Visit</h4>
                     <ul>
@@ -324,7 +340,7 @@
                         <li><a href="#" data-translate="footer-book">Book Tours</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4 data-translate="footer-about">About</h4>
                     <ul>
@@ -335,7 +351,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Monastery360 - Smart India Hackathon 2025 | Government of Sikkim</p>
             </div>
@@ -348,4 +364,5 @@
     <script src="js/main.js"></script>
     <script src="js/api.js"></script>
 </body>
+
 </html>
