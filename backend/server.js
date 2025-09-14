@@ -59,7 +59,7 @@ const MONASTERY_DATABASE = [
         images: {
             main: "/images/monasteries/rumtek/main.jpg",
             gallery: [
-                "/images/monasteries/rumtek/exterior1.jpg",
+                Image.src='',
                 "/images/monasteries/rumtek/interior1.jpg",
                 "/images/monasteries/rumtek/prayer_hall.jpg",
                 "/images/monasteries/rumtek/golden_stupa.jpg"
@@ -220,9 +220,9 @@ const MONASTERY_DATABASE = [
             features: ["Seven-tier wooden sculpture", "Ancient murals", "Prayer wheels", "Meditation caves"]
         },
         images: {
-            main: "/images/monasteries/pemayangtse/main.jpg",
+            main:'',
             gallery: [
-                "/images/monasteries/pemayangtse/exterior.jpg",
+                ,
                 "/images/monasteries/pemayangtse/sculpture.jpg",
                 "/images/monasteries/pemayangtse/view.jpg"
             ],

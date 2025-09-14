@@ -37,6 +37,28 @@ body {
     overflow-x: hidden;
 }
 
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    background: var(--white);
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: var(--shadow);
+}
+
+.language-switcher select {
+    border: none;
+    background: transparent;
+    padding: 8px 15px;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
 /* Navigation */
 /*my edit*/
 .navbar {
@@ -401,7 +423,7 @@ body {
     margin-bottom: 1.5rem;
     line-height: 1.7;
      /*  glowing text */
-     text-shadow: 0 0 3px #ffff, 
+     text-shadow: 0 0 3px #ffffff97, 
      0 0 6px #ffffff88, 
      0 0 9px #ffffff8f;
 }
@@ -431,9 +453,7 @@ body {
 }
 
 .feature-btn {
- Extra
     background: rgba(255, 255, 255, 0.4);
-  main
     color: white;
     border: 2px solid rgb(255, 255, 255);
     padding: 1rem 2rem;
@@ -448,7 +468,7 @@ body {
     transition: all 0.3s ease;
 
     /*  glowing text */
-    text-shadow: 0 0 30px #fff, 
+    text-shadow: 0 0 5px #fff, 
                  0 0 10px #ffffff, 
                  0 0 20px #ffffff;
 }
@@ -816,8 +836,7 @@ body {
   color: #FFD700;        /* golden yellow */
   font-weight: bold;     /* mota text */ /* underline */
 }
-.feature-card[data-feature="interactive-map"] 
-Extra
+.feature-card[data-feature="interactive-map"] {
   background-image: url("ugyen-wangdi-kJn8iVl0stU-unsplash.jpg");
   background-size: cover;
   background-position: center;
@@ -826,43 +845,92 @@ Extra
 }
 
 .feature-card[data-feature="interactive-map"]::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: 0;
 }
-
 .feature-card[data-feature="digital-archives"] {
-    background-image: url("digital archives symbol.png");
+    background-image: url("dana-ward-tDOrQDr11oc-unsplash.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
-    color: black; /* or white depending on readability */
-}
-.feature-card[data-feature="digital-archives"]::after {
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="digital-archives"]::after {
     content: "";
     position: absolute;
     inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
     z-index: 0;
-}
+  }
 
 
-
- .feature-card[data-feature="virtual-tours"] {
+  .feature-card[data-feature="virtual-tours"] {
     background-image: url("pexels-photo-123335.jpeg");
     background-size: cover;
     background-position: center;
     position: relative;
-    color: black; /* or white depending on readability */
-}
-
-.feature-card[data-feature="virtual-tours"]::after {
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="virtual-tours"]::after {
     content: "";
     position: absolute;
     inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
     z-index: 0;
   }
- main
+
+  .feature-card[data-feature="audio-guide"] {
+    background-image: url("audi.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="audio-guide"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    z-index: 0;
+  }
+
+  .feature-card[data-feature="cultural-calendar"] {
+    background-image: url("Culture-of-Sikkim-Dances-of-Sikkim.webp");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="cultural-calendar"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    z-index: 0;
+  }
+
+  .feature-card[data-feature="travel-integration"] {
+    background-image: url("imm\ \(2\).jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="travel-integration"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    z-index: 0;
+  }
 
 .feature-card * {
   position: relative;
