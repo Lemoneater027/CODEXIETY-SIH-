@@ -62,7 +62,7 @@ body {
 /* Navigation */
 /*my edit*/
 .navbar {
-    background: rgba(0, 0, 0, 0.50);
+    background: rgba(5, 5, 5, 0.5);
     backdrop-filter: blur(6px);
     padding: 15px 40px;
     
@@ -81,7 +81,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
-    gap: 60px;
+    gap: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -172,6 +172,7 @@ body {
 
 /* Hero Section */
 .hero {
+    padding-top: 100px;
     min-height: 100vh;
     background: var(--gradient-primary);
     color: white;
@@ -368,7 +369,7 @@ body {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
 }
 
@@ -452,9 +453,7 @@ body {
 }
 
 .feature-btn {
- Extra
     background: rgba(255, 255, 255, 0.4);
-  main
     color: white;
     border: 2px solid rgb(255, 255, 255);
     padding: 1rem 2rem;
@@ -837,8 +836,7 @@ body {
   color: #FFD700;        /* golden yellow */
   font-weight: bold;     /* mota text */ /* underline */
 }
-.feature-card[data-feature="interactive-map"] 
-Extra
+.feature-card[data-feature="interactive-map"] {
   background-image: url("ugyen-wangdi-kJn8iVl0stU-unsplash.jpg");
   background-size: cover;
   background-position: center;
@@ -885,7 +883,54 @@ Extra
     background: rgba(0, 0, 0, 0.6); /* dark overlay */
     z-index: 0;
   }
- main
+
+  .feature-card[data-feature="audio-guide"] {
+    background-image: url("audi.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="audio-guide"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    z-index: 0;
+  }
+
+  .feature-card[data-feature="cultural-calendar"] {
+    background-image: url("Culture-of-Sikkim-Dances-of-Sikkim.webp");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="cultural-calendar"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    z-index: 0;
+  }
+
+  .feature-card[data-feature="travel-integration"] {
+    background-image: url("imm\ \(2\).jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .feature-card[data-feature="travel-integration"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    z-index: 0;
+  }
 
 .feature-card * {
   position: relative;

@@ -1,0 +1,313 @@
+  /* Global Styling 
+  body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #FFF8DC;
+      color: white;
+  }
+*/
+  body {
+      background-image: var(--bg-image);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      overflow-x: hidden;
+  }
+
+  /* Navbar */
+  /* Navigation */
+  /*my edit*/
+  .navbar {
+      background: rgba(0, 0, 0, 0.50);
+      backdrop-filter: blur(6px);
+      padding: 15px 40px;
+
+
+
+      box-shadow: var(--shadow);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+  }
+
+  .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      gap: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .nav-logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+  }
+
+  .nav-logo h2 {
+      color: yellow;
+      font-weight: 700;
+      font-size: 1.5rem;
+  }
+
+  .sih-badge {
+      background: var(--red-accent);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+
+      0%,
+      100% {
+          transform: scale(1);
+      }
+
+      50% {
+          transform: scale(1.05);
+      }
+  }
+
+  .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+      align-items: center;
+  }
+
+  .nav-menu a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+  }
+
+  .nav-menu a:hover {
+      color: orange;
+  }
+
+  .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+  }
+
+  .nav-menu a:hover::after {
+      width: 100%;
+  }
+
+  .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+  }
+
+  .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: var(--white);
+      transition: 0.3s;
+      border-radius: 2px;
+  }
+
+  /* Hero Section */
+
+
+
+  /* Monastery Section */
+  .monastery-section {
+      background: #FFF8DC;
+      padding: 80px 40px;
+      text-align: center;
+  }
+
+  .monastery-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #000000;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Grid for Monasteries */
+  .temp {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+  }
+
+  /* Individual Monastery Cards */
+  .temp1 {
+      background: #1a1a1a;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .temp1:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .temp1 img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+  }
+
+  .temp1:hover img {
+      transform: scale(1.1);
+  }
+
+  .temp1 a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+  }
+
+  .temp1 a:hover {
+      color: #ffcb50;
+  }
+
+  /* Responsive Fix for Small Screens */
+  @media (max-width: 600px) {
+      .nav {
+          flex-direction: column;
+          background: rgba(0, 0, 0, 0.85);
+          position: absolute;
+          top: 50px;
+          right: 10px;
+          padding: 10px;
+          border-radius: 5px;
+          gap: 10px;
+      }
+
+      .nav a {
+          display: block;
+          padding: 5px 10px;
+      }
+
+      .cont {
+          padding: 10px 15px;
+      }
+
+      .cont h2 {
+          font-size: 1.2rem;
+      }
+  }
+
+  .footer {
+      background:  #2C1810;
+      color: white;
+      padding: 60px 2rem 20px;
+  }
+
+  .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 2rem;
+  }
+
+  .footer-section h4 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+  }
+
+  .footer-section p {
+      line-height: 1.7;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+      list-style: none;
+  }
+
+  .footer-section ul li {
+      margin-bottom: 0.7rem;
+  }
+
+  .footer-section ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+      color: var(--primary-color);
+  }
+
+  .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+  }
+
+  .social-links a {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+      transform: translateY(-3px);
+      background: var(--accent-color);
+  }
+
+  .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      opacity: 0.7;
+  }
