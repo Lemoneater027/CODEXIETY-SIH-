@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Archives - Monastery360</title>
+  <meta name="description" content="Explore digitally preserved manuscripts, murals, and documents from Sikkim’s monasteries.">
+  <link rel="stylesheet" href="css/archive.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="assets/icons/monastery360-logo.png" alt="Monastery360">
+        <h2>Monastery360</h2>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="monasteries.html">Monasteries</a></li>
+        <li><a href="virtual-tour.html">Virtual Tours</a></li>
+        <li><a href="map.html">Interactive Map</a></li>
+        <li><a href="archives.html" class="active">Digital Archives</a></li>
+        <li><a href="cultural-calendar.html">Cultural Calendar</a></li>
+        <li><a href="audio-guide.html">Audio Guide</a></li>
+        <li><a href="travel-guide.html">Travel Guide</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero archive-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Digital Archives</h1>
+      <style>
+    h1 {
+      color: goldenrod;
+    }
+  </style>
+      <p>Explore manuscripts, murals, and historical documents preserved for future generations</p>
+     <div class="container">
+    </div>
+    </div>
+  </section>
+
+
+  <!-- Archives Grid -->
+  <section class="archives">
+    <div class="container">
+      <h2>Explore Archives</h2>
+      <style>
+        h2 {
+          color: black;
+        }
+      </style>
+     
+      <div class="archives-grid" id="archivesGrid">
+           <div class="archive-card" data-type="manuscript">
+           <div class="card-top">📜 Manuscript</div>
+           <h3>Rare Tibetan Manuscript</h3>
+           <p>Handwritten treasures from centuries past, carefully preserved for the future. These manuscripts hold stories, teachings, and wisdom beyond time.</p>
+      </div>
+
+         <div class="archive-card" data-type="mural">
+         <div class="card-top">🎨 Mural</div>
+        <h3>Monastery Wall Mural</h3>
+        <p>Vibrant wall paintings that bring monastery halls to life. Each mural tells stories of deities, legends, and spiritual journeys</p>
+        </div>
+
+      <div class="archive-card" data-type="document">
+      <div class="card-top">📄 Document</div>
+      <h3>Historic Edict</h3>
+      <p>Historic scrolls and papers that carry stories of rituals, land, and governance across centuries.</p>
+      </div>
+     </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Monastery360</h4>
+          <p>Preserving Sikkim's spiritual heritage through immersive digital experiences</p>
+        </div>
+        <div class="footer-section">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="monasteries.html">All Monasteries</a></li>
+            <li><a href="virtual-tour.html">Virtual Tours</a></li>
+            <li><a href="map.html">Interactive Map</a></li>
+            <li><a href="archives.html">Digital Archives</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Plan Visit</h4>
+          <ul>
+            <li><a href="cultural-calendar.html">Cultural Calendar</a></li>
+            <li><a href="travel-guide.html">Travel Guide</a></li>
+            <li><a href="audio-guide.html">Audio Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Monastery360 | Government of Sikkim</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function filterArchives() {
+      const searchInput = document.getElementById('archiveSearch').value.toLowerCase();
+      const filterType = document.getElementById('archiveFilter').value;
+      const cards = document.querySelectorAll('.archive-card');
+
+      cards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const type = card.getAttribute('data-type');
+        const matchSearch = title.includes(searchInput);
+        const matchFilter = (filterType === 'all' || filterType === type);
+
+        if (matchSearch && matchFilter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
