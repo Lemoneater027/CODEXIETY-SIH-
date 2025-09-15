@@ -47,120 +47,129 @@
   /* Navigation */
   /*my edit*/
   .navbar {
-      background: rgba(0, 0, 0, 0.50);
-      backdrop-filter: blur(6px);
-      padding: 15px 40px;
+    background: rgba(5, 5, 5, 0.5);
+    backdrop-filter: blur(6px);
+    padding: 15px 40px;
+    
+    
+    
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
 
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
-      box-shadow: var(--shadow);
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      transition: all 0.3s ease;
-  }
+.nav-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 
-  .nav-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      gap: 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
+.nav-logo h2 {
+    color: yellow;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
 
-  .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-  }
+.sih-badge {
+    background: var(--red-accent);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
 
-  .nav-logo img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-  }
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
 
-  .nav-logo h2 {
-      color: yellow;
-      font-weight: 700;
-      font-size: 1.5rem;
-  }
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+    font-size: medium;
+}
 
-  .sih-badge {
-      background: var(--red-accent);
-      color: white;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      animation: pulse 2s infinite;
-  }
+.nav-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+/*
+.nav-menu a:hover {
+    color: orange;
+}
+.log a:hover{
+    color: white;
+}
 
-  @keyframes pulse {
+.log{
+    
+    border: 1px solid white;
+    padding: 6px;
+    transition: all 0.3s ease;
+    
+}
+.log:hover{
+    background-color: goldenrod;
+    
+}
+*/
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
 
-      0%,
-      100% {
-          transform: scale(1);
-      }
+.nav-menu a:hover::after {
+    width: 100%;
+}
 
-      50% {
-          transform: scale(1.05);
-      }
-  }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
 
-  .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-      align-items: center;
-  }
-
-  .nav-menu a {
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-      position: relative;
-  }
-
-  .nav-menu a:hover {
-      color: orange;
-  }
-
-  .nav-menu a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary-color);
-      transition: width 0.3s ease;
-  }
-
-  .nav-menu a:hover::after {
-      width: 100%;
-  }
-
-  .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-  }
-
-  .hamburger span {
-      width: 25px;
-      height: 3px;
-      background: var(--white);
-      transition: 0.3s;
-      border-radius: 2px;
-  }
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    transition: 0.3s;
+    border-radius: 2px;
+}
 
   /* Hero Section */
 
@@ -221,6 +230,12 @@
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .temp{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
   }
 
   .temp1:hover {

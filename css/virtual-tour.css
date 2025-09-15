@@ -63,6 +63,7 @@
    display: flex;
    list-style: none;
    gap: 1.5rem;
+   font-size: medium;
 
  }
 
