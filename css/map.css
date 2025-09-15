@@ -1,0 +1,272 @@
+/* Map Section */
+.map-section {
+    padding: 80px 2rem;
+    background: #f5f5dc;
+    /* beige background */
+    text-align: center;
+}
+
+.map-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #2c1810;
+    /* dark brown */
+}
+
+.map-desc {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #6b4e3d;
+    /* medium brown */
+}
+
+.map-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 4px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
+    display: block;
+}
+
+.navbar {
+    background: rgba(5, 5, 5, 0.5);
+    backdrop-filter: blur(6px);
+    padding: 15px 40px;
+
+
+
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-logo h2 {
+    color: yellow;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.sih-badge {
+    background: var(--red-accent);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: orange;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/*.map-point {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #e63946;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.map-point:hover {
+  transform: scale(1.3);
+}
+
+/* Tooltip effect */
+.map-point::after {
+    content: attr(data-info);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2c1810;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.fex {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    height: 100vh;
+
+}
+
+.map-point:hover::after {
+    opacity: 1;
+}
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 60px 2rem 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.footer-section p {
+    line-height: 1.7;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.7rem;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.7;
+}

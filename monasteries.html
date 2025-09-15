@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/icons/monastery360-logo.png" alt="Monastery360">
+                <img src="css/icon.png" alt="Monastery360">
                 <h2 data-translate="nav-title">Monastery360</h2>
             </div>
             <ul class="nav-menu" id="nav-menu">
@@ -32,37 +32,70 @@
             </div>
         </div>
     </nav>
+    <div class="info">
+        <section class="intro">
+            <h2>About Monasteries in Sikkim</h2>
+            <p>
+                Sikkim is home to over 200 monasteries, representing the rich spiritual and cultural traditions
+                of Tibetan Buddhism. Each monastery reflects unique architectural styles, centuries-old rituals,
+                and vibrant festivals. From the famous Rumtek Monastery to the serene Phensang Monastery,
+                these sacred places are not only centers of worship but also repositories of art, manuscripts,
+                and living traditions.
+            </p>
+        </section>
+
+        <!-- ===== Recommended Highlight ===== -->
+        <div class="rec">
+            <section class="highlight">
+                <h2>Did you know?</h2>
+                <h3> Tawang Monastery, Arunachal Pradesh</h3>
+                <p>
+                    Beyond Sikkim, one of the most remarkable monasteries in India is
+                    <strong>Tawang Monastery</strong> in Arunachal Pradesh. It is the
+                    <em>second largest monastery in Asia</em> and the largest in the country’s northeast,
+                    housing around 450 monks.
+                </p>
+            </section>
+        </div>
+    </div>
 
     <!-- Monastery Section -->
     <div class="monastery-section">
         <h2>Famous Monasteries of Sikkim</h2>
         <div class="temp">
-            <div class="temp1">
+            <div class="temp1"
+                onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/rumtek.jpg')">
                 <img src="images/rumtek.jpg" alt="Rumtek Monastery">
                 <a href="#">RUMTEK</a>
             </div>
-            <div class="temp1">
+            <div class="temp1"
+                onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/dubdi.jpeg')">
                 <img src="images/dubdi.jpeg" alt="Dubdi Monastery">
                 <a href="#">DUBDI</a>
             </div>
-            <div class="temp1">
+            <div class="temp1"
+             onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/Phensang.jpg')">
                 <img src="images/Phensang.jpg" alt="Phensang Monastery">
                 <a href="#">PHENSANG</a>
             </div>
-            <div class="temp1">
+            <div class="temp1"
+            onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/kartok.jpg')">
                 <img src="images/Kartok.jpg" alt="Kartok Monastery">
                 <a href="#">Kartok</a>
             </div>
-            <div class="temp1">
+            <div class="temp1"
+            onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/Phodong.jpg')">
                 <img src="images/Phodong.jpg" alt="Phodong Monastery">
                 <a href="#">PHODONG</a>
             </div>
-            <div class="temp1">
+            <div class="temp1"
+            onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/Tashiding.png')">
                 <img src="images/Tashiding.png" alt="Tashiding Monastery">
                 <a href="#">TASHIDING</a>
             </div>
         </div>
     </div>
+
 
 
     <footer class="footer">
@@ -83,7 +116,7 @@
                 <div class="footer-section">
                     <h4 data-translate="footer-explore">Explore</h4>
                     <ul>
-                        <li><a href="monasteries.html" data-translate="footer-monasteries">All Monasteries</a></li>
+                        <li><a href="monastery.html" data-translate="footer-monasteries">All Monasteries</a></li>
                         <li><a href="virtual-tour.html" data-translate="footer-virtual-tours">Virtual Tours</a></li>
                         <li><a href="map.html" data-translate="footer-map">Interactive Map</a></li>
                         <li><a href="archives.html" data-translate="footer-archives">Digital Archives</a></li>
@@ -94,9 +127,7 @@
                     <h4 data-translate="footer-plan">Plan Visit</h4>
                     <ul>
                         <li><a href="cultural-calendar.html" data-translate="footer-calendar">Cultural Calendar</a></li>
-                        <li><a href="travel-guide.html" data-translate="footer-travel">Travel Guide</a></li>
-                        <li><a href="audio-guide.html" data-translate="footer-audio">Audio Guide</a></li>
-                        <li><a href="#" data-translate="footer-book">Book Tours</a></li>
+                        
                     </ul>
                 </div>
 
@@ -117,9 +148,43 @@
         </div>
     </footer>
 
-<!-- After your existing CSS & font links, before closing </body> -->
 <script src="js/monastery-data.js"></script>
-<script src="js/render-monasteries.js"></script>
+
+
+
+
+    <!--This is the popup modal-->
+    <!-- Popup Modal -->
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <!-- Close Button -->
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+
+            <!-- Monastery Details -->
+            <img id="popupImage" src="" alt="Monastery" class="popup-img">
+            <h2 id="popupTitle"></h2>
+            <p id="popupLocation"></p>
+            <p id="popupDescription"></p>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(name, location, description, image) {
+            document.getElementById('popupTitle').textContent = name;
+            document.getElementById('popupLocation').textContent = location;
+            document.getElementById('popupDescription').textContent = description;
+            document.getElementById('popupImage').src = image;
+
+            document.getElementById('popup').classList.remove('hidden');
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.add('hidden');
+        }
+    </script>
+
+
+
 
 
 

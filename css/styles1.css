@@ -7,7 +7,7 @@
   }
 */
   body {
-      background-image: var(--bg-image);
+      background-color: #FFF8DC;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -25,6 +25,22 @@
       line-height: 1.6;
       color: var(--text-dark);
       overflow-x: hidden;
+  }
+
+  .info {
+      display: flex;
+      gap: 20px;
+
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+
+  .intro {
+      font-size: 20px;
+  }
+
+  .rec {
+      font-size: 15px;
   }
 
   /* Navbar */
@@ -148,12 +164,39 @@
 
   /* Hero Section */
 
+  .intro {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: #FFF8DC;
+      border-radius: 10px;
 
+  }
+
+  .highlight {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: #f3e4a8;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .intro h2,
+  .highlight h2 {
+      margin-bottom: 1rem;
+      color: #444;
+  }
+
+  .info {
+      padding-top: 100px;
+      background-color: #FFF8DC;
+  }
 
   /* Monastery Section */
   .monastery-section {
       background: #FFF8DC;
-      padding: 80px 40px;
+      padding: 20px 40px;
       text-align: center;
   }
 
@@ -238,7 +281,7 @@
   }
 
   .footer {
-      background:  #2C1810;
+      background: #2C1810;
       color: white;
       padding: 60px 2rem 20px;
   }
@@ -310,4 +353,70 @@
       padding-top: 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       opacity: 0.7;
+  }
+
+
+  /*for modal popup*/
+  /* Popup Overlay */
+  .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+  }
+
+  /* Hidden state */
+  .hidden {
+      display: none;
+  }
+
+  /* Popup Box */
+  .popup-content {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 20px;
+      border: 3px solid #333;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 900px;
+      max-height: 80vh;
+      /* limit height to viewport */
+      overflow-y: auto;
+      /* enable vertical scrolling */
+      text-align: center;
+      position: relative;
+  }
+
+  body.modal-open {
+      overflow: hidden;
+      /* prevent background scroll */
+  }
+
+  /* Close Button */
+  .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+  }
+
+  /* Image */
+
+  .popup-img {
+      width: 100%;
+      /* 80% of popup width */
+      height: 500px;
+      /* fixed height */
+      object-fit: contain;
+      /* keeps full image visible */
+      margin: 0 auto 15px auto;
+      /* center horizontally */
+      display: block;
   }

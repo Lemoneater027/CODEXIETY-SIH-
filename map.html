@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <!-- Linking CSS -->
+    <link rel="stylesheet" href="css/map.css">
+
+</head>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="css/icon.png" alt="Monastery360">
+            <h2 data-translate="nav-title">Monastery360</h2>
+
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html" data-translate="nav-home">Home</a></li>
+            <li><a href="monasteries.html" data-translate="nav-monasteries">Monasteries</a></li>
+            <li><a href="virtual-tour.html" data-translate="nav-virtual-tour">Virtual Tours</a></li>
+            <li><a href="map.html" data-translate="nav-map">Interactive Map</a></li>
+            <li><a href="archives.html" data-translate="nav-archives">Digital Archives</a></li>
+            <li><a href="cultural-calendar.html" data-translate="nav-calendar">Cultural Calendar</a></li>
+
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<style>
+   
+
+    /* Sidebar */
+    .sidebar {
+        width: 250px;
+        background: #2c1810;
+        color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: #f5f5dc;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar li {
+        margin: 10px 0;
+    }
+
+    .sidebar a {
+        text-decoration: none;
+        color: #f5f5dc;
+        font-size: 1rem;
+        transition: color 0.3s;
+        cursor: pointer;
+    }
+
+    .sidebar a:hover {
+        color: #e63946;
+    }
+
+    /* Map container */
+    .map-container {
+        flex: 1;
+        background: #ddd;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    .cont{
+        padding-top:100px;
+        text-align: center;
+        background-color: rgb(50, 49, 49);
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+    <div class="cont">
+        <h1>Interactive map of sikkim monasteries</h1><br>
+    </div>
+    <div class="fex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Monasteries</h2>
+            <ul>
+                <li><a onclick="loadMap('rumtek')">Rumtek Monastery</a></li>
+                <li><a onclick="loadMap('phensang')">Phensang Monastery</a></li>
+                <li><a onclick="loadMap('tashiding')">Tashiding Monastery</a></li>
+                <li><a onclick="loadMap('dubdi')">Dubdi Monastery</a></li>
+                <li><a onclick="loadMap('kartok')">Kartok Monastery</a></li>
+                <li><a onclick="loadMap('phodong')">Phodong Monastery</a></li>
+            </ul>
+        </div>
+
+        <!-- Map container -->
+        <div class="map-container">
+            <iframe id="mapFrame"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29371.63723788252!2d88.6065!3d27.3257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6a5746b5d7f41%3A0xf42d4ebabc!2sRumtek%20Monastery!5e0!3m2!1sen!2sin!4v1694789048293!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Script -->
+        <script>
+            function loadMap(monastery) {
+                const mapFrame = document.getElementById("mapFrame");
+
+                // Different map embeds
+                const maps = {
+                    rumtek: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3545.7856129035295!2d88.5589439754949!3d27.288591476425115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6a30f1e34741b%3A0x317cb60253a00c9e!2sRumtek%20Monastery!5e0!3m2!1sen!2ssg!4v1757932852638!5m2!1sen!2ssg",
+                    phensang: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.5577657857802!2d88.60525868239323!3d27.420722915363076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6ba41484e83cf%3A0x1ae7c5a6a881d70e!2sPhensang%20Monastery!5e0!3m2!1sen!2ssg!4v1757931770407!5m2!1sen!2ssg",
+                    tashiding: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2680.753373238079!2d88.2957260706271!3d27.309021426632633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e685fca06dc171%3A0x92150f5f129db887!2sTashiding%20Monastery!5e0!3m2!1sen!2ssg!4v1757932927029!5m2!1sen!2ssg",
+                    dubdi: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3544.024955867385!2d88.25422007549679!3d27.34368827639302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e68500410af5fb%3A0xf66a2f91d9993778!2sDubdi%20Monastery%20Yuksam!5e0!3m2!1sen!2ssg!4v1757933049581!5m2!1sen!2ssg",
+                    kartok: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3547.310181196614!2d88.58543007549325!3d27.24079957645316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6a7b8024d1677%3A0xd2b0be6addf3222e!2sKartok%20Monastery!5e0!3m2!1sen!2ssg!4v1757933140295!5m2!1sen!2ssg",
+                    phodong: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3541.8095170720994!2d88.58124557549925!3d27.41287147635263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6bba53187e157%3A0xefa19c90b60b6591!2sPhodong%20Monastery!5e0!3m2!1sen!2ssg!4v1757933201359!5m2!1sen!2ssg"
+                };
+
+                mapFrame.src = maps[monastery];
+            }
+        </script>
+    </div>
+
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Monastery360</h4>
+                    <p data-translate="footer-desc">Preserving Sikkim's spiritual heritage through immersive digital
+                        experiences</p>
+                   
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-translate="footer-explore">Explore</h4>
+                    <ul>
+                        <li><a href="monastery.html" data-translate="footer-monasteries">All Monasteries</a></li>
+                        <li><a href="virtual-tour.html" data-translate="footer-virtual-tours">Virtual Tours</a></li>
+                        <li><a href="map.html" data-translate="footer-map">Interactive Map</a></li>
+                        <li><a href="archives.html" data-translate="footer-archives">Digital Archives</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-translate="footer-plan">Plan Visit</h4>
+                    <ul>
+                        <li><a href="cultural-calendar.html" data-translate="footer-calendar">Cultural Calendar</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-translate="footer-about">About</h4>
+                    <ul>
+                        <li><a href="about.html" data-translate="footer-about-us">About Us</a></li>
+                        <li><a href="#" data-translate="footer-contact">Contact</a></li>
+                        <li><a href="#" data-translate="footer-privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-translate="footer-terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Monastery360 - Smart India Hackathon 2025 | Government of Sikkim</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

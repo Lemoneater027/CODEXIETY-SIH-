@@ -82,7 +82,7 @@ body {
 .nav-menu a {
     text-decoration: none;
     color: #ffffff;
-    padding-right: 30px;
+    padding-right: 20px;
     font-weight: 500;
     font-size: 0.95rem;
     transition: color 0.3s ease;
@@ -122,18 +122,21 @@ body {
     transition: 0.3s;
     border-radius: 2px;
 }
-.hero{
-    padding-top: 100px;
+.bbg{
+   background-color: #FFF8DC;
+    padding-top:100px;
 }
+
 .calendar-hero {
     text-align: center;
     
     padding: 2rem;
-    background: #f4f4f4;
+    background: #FFF8DC;
 }
 
 .calendar-grid {
     display: grid;
+    background-color: #FFF8DC;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     padding: 2rem;
@@ -144,9 +147,13 @@ body {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
-
+.event-card:hover{
+     transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
 .event-date {
     background: #e63946;
     color: #fff;
@@ -173,8 +180,76 @@ body {
 }
 
 .footer {
-    text-align: center;
-    padding: 1rem;
-    background: #222;
-    color: #fff;
-}
+      background:  #2C1810;
+      color: white;
+      padding: 60px 2rem 20px;
+  }
+
+  .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 2rem;
+  }
+
+  .footer-section h4 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+  }
+
+  .footer-section p {
+      line-height: 1.7;
+      opacity: 0.8;
+      margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+      list-style: none;
+  }
+
+  .footer-section ul li {
+      margin-bottom: 0.7rem;
+  }
+
+  .footer-section ul li a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+      color: var(--primary-color);
+  }
+
+  .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+  }
+
+  .social-links a {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+      transform: translateY(-3px);
+      background: var(--accent-color);
+  }
+
+  .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      opacity: 0.7;
+  }
