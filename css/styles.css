@@ -135,11 +135,26 @@ body {
     transition: color 0.3s ease;
     position: relative;
 }
-
+/*
 .nav-menu a:hover {
     color: orange;
 }
+.log a:hover{
+    color: white;
+}
 
+.log{
+    
+    border: 1px solid white;
+    padding: 6px;
+    transition: all 0.3s ease;
+    
+}
+.log:hover{
+    background-color: goldenrod;
+    
+}
+*/
 .nav-menu a::after {
     content: '';
     position: absolute;
@@ -301,19 +316,19 @@ body {
 }
 
 .btn-primary {
-    background: blue;
+    background: rgb(246, 64, 64);
     color: white;
     box-shadow: var(--shadow);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
+    color: rgb(27, 15, 208);
     border: 2px solid white;
 }
 
 .btn-audio {
-    background: var(--red-accent);
+    background: rgb(18, 18, 210);
     color: white;
 }
 

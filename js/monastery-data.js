@@ -45,17 +45,11 @@ const MonasteryData = {
                     "/images/monasteries/rumtek/prayer_hall.jpg",
                     "/images/monasteries/rumtek/monks.jpg",
                     "/images/monasteries/rumtek/golden_stupa.jpg"
-                ],
-                virtualTour: [
-                    "/images/360-tours/rumtek/entrance.jpg",
-                    "/images/360-tours/rumtek/main_hall.jpg",
-                    "/images/360-tours/rumtek/prayer_hall.jpg",
-                    "/images/360-tours/rumtek/courtyard.jpg"
+
                 ]
             },
             audioGuides: {
-                english: "/audio/guides/rumtek_en.mp3",
-                nepali: "/audio/guides/rumtek_ne.mp3", 
+                english: "/audio/guides/rumtek_en.mp3", 
                 hindi: "/audio/guides/rumtek_hi.mp3"
             },
             visitingInfo: {

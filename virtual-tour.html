@@ -1,139 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Monastery360 - Virtual Tour</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Tour | Monastery360</title>
+  <link rel="stylesheet" href="css/virtual-tour.css">
 
-  <!-- Marzipano Library -->
-  <script src="https://www.marzipano.net/demos/vendor/marzipano.js"></script>
-
-  <!-- Font Awesome (icons for hotspots & UI) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <!-- Custom Styles -->
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: #000;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    /* VR Container */
-    #vr-container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
-    /* Navigation UI */
-    .vr-navigation {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      padding: 10px;
-      border-radius: 10px;
-      z-index: 1000;
-    }
-
-    .vr-nav-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .vr-nav-header h3 {
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .vr-nav-controls {
-      display: flex;
-      gap: 10px;
-    }
-
-    .vr-nav-btn {
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      font-size: 18px;
-      padding: 5px;
-    }
-
-    .vr-scene-list {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    .vr-scene-btn {
-      background: #222;
-      border: 1px solid #555;
-      padding: 5px 10px;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-
-    .vr-scene-btn.active {
-      background: #ff9800;
-      color: #000;
-    }
-
-    .vr-info-panel {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #ccc;
-    }
-
-    /* Hotspots */
-    .hotspot {
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-    }
-
-    .hotspot-info i,
-    .hotspot-navigate i,
-    .hotspot-audio i {
-      font-size: 24px;
-      color: #ff9800;
-    }
-
-    .hotspot-tooltip {
-      display: none;
-      position: absolute;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      padding: 5px 8px;
-      font-size: 12px;
-      border-radius: 4px;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
-
-    .hotspot:hover .hotspot-tooltip {
-      display: block;
-    }
-  </style>
 </head>
-<body>
-  <!-- VR Container -->
-  <div id="vr-container"></div>
 
-  <!-- Your Virtual Tour JS -->
-  <script src="virtual-tour.js"></script>
+<body>
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="css/icon.png" alt="Monastery360">
+        <h2>Monastery360</h2>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="monastery.html">Monasteries</a></li>
+        <li><a href="virtual-tour.html">Virtual Tours</a></li>
+        <li><a href="map.html">Interactive Map</a></li>
+        <li><a href="archives.html">Digital Archives</a></li>
+        <li><a href="cultural-calendar.html">Cultural Calendar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>Virtual Tour of Sikkim’s Monasteries</h1>
+    <p>Explore 360° views of sacred monasteries</p>
+  </header>
+
+  <!-- ===== Content ===== -->
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Monasteries</h3>
+      <a href="#rumtek">Rumtek Monastery</a>
+      <a href="#dubdi">Dubdi Monastery</a>
+      <a href="#tashiding">Tashiding Monastery</a>
+      <a href="#kartok">Kartok Monastery</a>
+      <a href="#phodong">Phodong Monastery</a>
+      <a href="#phensang">Phensang Monastery</a>
+    </aside>
+
+    <!-- Main Virtual Tours -->
+    <main>
+      <section id="rumtek" class="monastery">
+        <h2>Rumtek Monastery</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1757921708563!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRHNqcnJmWUE.!2m2!1d27.3059104605377!2d88.53628917812625!3f26.221613!4f0!5f0.7820865974627469"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="thumbnails">
+          <img src="rumtek_courtyard.jpg" alt="Courtyard">
+          <img src="rumtek_mainhall.jpg" alt="Main Hall">
+          <img src="rumtek_prayerhall.jpg" alt="Prayer Hall">
+        </div>
+      </section>
+
+      <section id="dubdi" class="monastery">
+        <h2>Dubdi Monastery</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1757919365348!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRFVpdHkxNndF!2m2!1d27.36655288826205!2d88.22999220879571!3f99.22185567790899!4f13.682885033701382!5f0.7820865974627469"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="thumbnails">
+          <img src="dubdi_exterior.jpg" alt="Exterior">
+          <img src="dubdi_interior.jpg" alt="Interior">
+        </div>
+      </section>
+
+      <section id="tashiding" class="monastery">
+        <h2>Tashiding Monastery</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1757921959126!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ0V6c08zSWc.!2m2!1d27.30891943909927!2d88.29787983128344!3f231.07106097077516!4f8.676443219672208!5f0.7820865974627469"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="thumbnails">
+          <img src="enchey_exterior.jpg" alt="Exterior">
+          <img src="enchey_interior.jpg" alt="Interior">
+        </div>
+      </section>
+
+      <section id="kartok" class="monastery">
+        <h2>Kartok Monastery</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1757922259000!6m8!1m7!1soai7Ta_mV-kIkOmeBVeusw!2m2!1d27.24064035522526!2d88.58755568983742!3f84.23460391692814!4f-1.6257483023821777!5f0.5685277537669915"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="thumbnails">
+          <img src="enchey_exterior.jpg" alt="Exterior">
+          <img src="enchey_interior.jpg" alt="Interior">
+        </div>
+      </section>
+
+
+      <section id="phodong" class="monastery">
+        <h2>Phodong Monastery</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1757922916111!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRGg0OURqV3c.!2m2!1d27.41303405816734!2d88.58375766744783!3f132.92659391979475!4f-7.082655419707862!5f0.7820865974627469"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="thumbnails">
+          <img src="enchey_exterior.jpg" alt="Exterior">
+          <img src="enchey_interior.jpg" alt="Interior">
+        </div>
+      </section>
+
+
+      <section id="phensang" class="monastery">
+        <h2>Phensang Monastery</h2>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!4v1757923820507!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRGhqN1h4REE.!2m2!1d27.41736867627197!2d88.63046689913445!3f325.6654219640906!4f4.747329786008777!5f0.7820865974627469"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="thumbnails">
+          <img src="enchey_exterior.jpg" alt="Exterior">
+          <img src="enchey_interior.jpg" alt="Interior">
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Monastery360</h4>
+          <p>Preserving Sikkim's spiritual heritage through immersive digital experiences</p>
+        </div>
+        <div class="footer-section">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="monastery.html">All Monasteries</a></li>
+            <li><a href="virtual-tour.html">Virtual Tours</a></li>
+            <li><a href="map.html">Interactive Map</a></li>
+            <li><a href="archives.html">Digital Archives</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Plan Visit</h4>
+          <ul>
+            <li><a href="cultural-calendar.html">Cultural Calendar</a></li>
+            
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>About</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Monastery360 | Government of Sikkim</p>
+      </div>
+  </footer>
+
+
 </body>
+
 </html>

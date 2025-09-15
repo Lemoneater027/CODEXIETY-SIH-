@@ -147,6 +147,14 @@ body {
     border-radius: 2px;
 }
 
+/* pop section */
+.archive-card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.archive-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -194,7 +202,7 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
+    max-width: 850px;
     padding: 2rem;
 }
 

@@ -19,7 +19,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/icons/monastery360-logo.png" alt="Monastery360">
+                <img src="css/icon.png" alt="Monastery360">
                 <h2 data-translate="nav-title">Monastery360</h2>
 
             </div>
@@ -30,7 +30,10 @@
                 <li><a href="map.html" data-translate="nav-map">Interactive Map</a></li>
                 <li><a href="archives.html" data-translate="nav-archives">Digital Archives</a></li>
                 <li><a href="cultural-calendar.html" data-translate="nav-calendar">Cultural Calendar</a></li>
-
+              <!-- <div class="log">
+                    <li><a href="login.html" data-translate="login">Login</a></li>
+                </div>
+                --> 
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
                 <span></span>
@@ -67,11 +70,11 @@
             <div class="hero-buttons">
                 <button class="btn-primary" onclick="startVirtualTour()">
                     <i class="fas fa-vr-cardboard"></i>
-                    <span data-translate="btn-start-tour">Start Virtual Tour</span>
+                    <span data-translate="btn-start-tour"><a href="virtual-tour.html">Virtual Tour </a></span>
                 </button>
                 <button class="btn-secondary" onclick="exploreMap()">
                     <i class="fas fa-map-marked-alt"></i>
-                    <span data-translate="btn-explore-map">Explore Map</span>
+                    <span data-translate="btn-explore-map"><a href="map.html">Explore Map</a></span>
                 </button>
                 <button class="btn-audio" onclick="playAudioGuide()">
                     <i class="fas fa-headphones"></i>
@@ -79,7 +82,7 @@
                 </button>
             </div>
         </div>
-        
+
     </section>
 
     <!-- Features Section -->
@@ -103,10 +106,7 @@
                         <li data-translate="feature-vr-3">Multi-language narration</li>
                         <li data-translate="feature-vr-4">VR headset compatible</li>
                     </ul>
-                    <button class="feature-btn" onclick="goToVirtualTour()">
-                        <span data-translate="btn-explore">Explore</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                   
                 </div>
 
                 <div class="feature-card" data-feature="interactive-map">
@@ -122,10 +122,7 @@
                         <li data-translate="feature-map-3">Nearby attractions & services</li>
                         <li data-translate="feature-map-4">Offline maps for remote areas</li>
                     </ul>
-                    <button class="feature-btn" onclick="goToMap()">
-                        <span data-translate="btn-explore">Explore</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                   
                 </div>
 
                 <div class="feature-card" data-feature="digital-archives">
@@ -141,10 +138,7 @@
                         <li data-translate="feature-archives-3">AI-powered categorization</li>
                         <li data-translate="feature-archives-4">Downloadable resources</li>
                     </ul>
-                    <button class="feature-btn" onclick="goToArchives()">
-                        <span data-translate="btn-explore">Explore</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                   
                 </div>
 
                 <div class="feature-card" data-feature="audio-guide">
@@ -160,10 +154,7 @@
                         <li data-translate="feature-audio-3">Offline audio download</li>
                         <li data-translate="feature-audio-4">Monk narrated stories</li>
                     </ul>
-                    <button class="feature-btn" onclick="goToAudioGuide()">
-                        <span data-translate="btn-explore">Explore</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                  
                 </div>
 
                 <div class="feature-card" data-feature="cultural-calendar">
@@ -179,10 +170,7 @@
                         <li data-translate="feature-calendar-3">Event booking system</li>
                         <li data-translate="feature-calendar-4">Tourist participation</li>
                     </ul>
-                    <button class="feature-btn" onclick="goToCalendar()">
-                        <span data-translate="btn-explore">Explore</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                   
                 </div>
 
                 <div class="feature-card" data-feature="travel-integration">
@@ -198,10 +186,7 @@
                         <li data-translate="feature-travel-3">Local guide services</li>
                         <li data-translate="feature-travel-4">Tour packages</li>
                     </ul>
-                    <button class="feature-btn" onclick="goToTravel()">
-                        <span data-translate="btn-explore">Explore</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                   
                 </div>
             </div>
         </div>
@@ -279,29 +264,9 @@
         </div>
     </section>
 
-    <!-- SIH Section -->
-    <section class="sih-section">
-        <div class="container">
-            <div class="sih-content">
-                <div class="sih-logo">
-                    <img src="assets/icons/sih-logo.png" alt="Smart India Hackathon 2025">
-                </div>
-                <div class="sih-text">
-                    <h3>Smart India Hackathon 2025</h3>
-                    <p><strong>Problem Statement:</strong> Digitize and Showcase Monasteries of Sikkim for Tourism and
-                        Cultural Preservation</p>
-                    <p><strong>Organization:</strong> Government of Sikkim - Department of Higher & Technical Education
-                    </p>
-                    <p><strong>Theme:</strong> Travel & Tourism | <strong>Category:</strong> Software</p>
+    
 
-                  
-                    <p><strong>Team:</strong> CODEXIETY | <strong>College:</strong> Assam Down Town University</p>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
+   
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -310,18 +275,13 @@
                     <h4>Monastery360</h4>
                     <p data-translate="footer-desc">Preserving Sikkim's spiritual heritage through immersive digital
                         experiences</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+                   
                 </div>
 
                 <div class="footer-section">
                     <h4 data-translate="footer-explore">Explore</h4>
                     <ul>
-                        <li><a href="monasteries.html" data-translate="footer-monasteries">All Monasteries</a></li>
+                        <li><a href="monastery.html" data-translate="footer-monasteries">All Monasteries</a></li>
                         <li><a href="virtual-tour.html" data-translate="footer-virtual-tours">Virtual Tours</a></li>
                         <li><a href="map.html" data-translate="footer-map">Interactive Map</a></li>
                         <li><a href="archives.html" data-translate="footer-archives">Digital Archives</a></li>
@@ -332,9 +292,6 @@
                     <h4 data-translate="footer-plan">Plan Visit</h4>
                     <ul>
                         <li><a href="cultural-calendar.html" data-translate="footer-calendar">Cultural Calendar</a></li>
-                        <li><a href="travel-guide.html" data-translate="footer-travel">Travel Guide</a></li>
-                        <li><a href="audio-guide.html" data-translate="footer-audio">Audio Guide</a></li>
-                        <li><a href="#" data-translate="footer-book">Book Tours</a></li>
                     </ul>
                 </div>
 
