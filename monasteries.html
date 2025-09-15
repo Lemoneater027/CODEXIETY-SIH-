@@ -63,38 +63,33 @@
     <div class="monastery-section">
         <h2>Famous Monasteries of Sikkim</h2>
         <div class="temp">
-            <div class="temp1"
-                onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/rumtek.jpg')">
-                <img src="images/rumtek.jpg" alt="Rumtek Monastery">
-                <a href="#">RUMTEK</a>
-            </div>
-            <div class="temp1"
-                onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/dubdi.jpeg')">
-                <img src="images/dubdi.jpeg" alt="Dubdi Monastery">
-                <a href="#">DUBDI</a>
-            </div>
-            <div class="temp1"
-             onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/Phensang.jpg')">
-                <img src="images/Phensang.jpg" alt="Phensang Monastery">
-                <a href="#">PHENSANG</a>
-            </div>
-            <div class="temp1"
-            onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/kartok.jpg')">
-                <img src="images/Kartok.jpg" alt="Kartok Monastery">
-                <a href="#">Kartok</a>
-            </div>
-            <div class="temp1"
-            onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/Phodong.jpg')">
-                <img src="images/Phodong.jpg" alt="Phodong Monastery">
-                <a href="#">PHODONG</a>
-            </div>
-            <div class="temp1"
-            onclick="openPopup('Rumtek Monastery','Gangtok, Sikkim','Rumtek Monastery is one of the largest and most famous monasteries in Sikkim.','images/Tashiding.png')">
-                <img src="images/Tashiding.png" alt="Tashiding Monastery">
-                <a href="#">TASHIDING</a>
-            </div>
-        </div>
+    <div class="temp1" onclick="openPopup('rumtek_monastery')">
+        <img src="images/rumtek.jpg" alt="Rumtek Monastery">
+        <a href="#">RUMTEK</a>
     </div>
+    <div class="temp1" onclick="openPopup('dubdi_monastery')">
+        <img src="images/dubdi.jpeg" alt="Dubdi Monastery">
+        <a href="#">DUBDI</a>
+    </div>
+    <div class="temp1" onclick="openPopup('phensang_monastery')">
+        <img src="images/Phensang.jpg" alt="Phensang Monastery">
+        <a href="#">PHENSANG</a>
+    </div>
+    <div class="temp1" onclick="openPopup('kartok_monastery')">
+        <img src="images/Kartok.jpg" alt="Kartok Monastery">
+        <a href="#">KARTOK</a>
+    </div>
+    <div class="temp1" onclick="openPopup('phodong_monastery')">
+        <img src="images/Phodong.jpg" alt="Phodong Monastery">
+        <a href="#">PHODONG</a>
+    </div>
+    <div class="temp1" onclick="openPopup('tashiding_monastery')">
+        <img src="images/Tashiding.png" alt="Tashiding Monastery">
+        <a href="#">TASHIDING</a>
+    </div>
+ </div>
+
+</div>
 
 
 
@@ -150,38 +145,293 @@
 
 <script src="js/monastery-data.js"></script>
 
+<!-- Enhanced Popup Modal -->
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <!-- Close Button -->
+        <span class="close-btn" onclick="closePopup()">&times;</span>
 
+        <!-- Header with Main Image -->
+        <div class="popup-header">
+            <img id="popupMainImage" src="" alt="Monastery" class="popup-main-image">
+            <div class="popup-title-overlay">
+                <h2 id="popupTitle" class="popup-title"></h2>
+                <p id="popupLocation" class="popup-location">
+                    <span class="icon">📍</span>
+                    <span id="locationText"></span>
+                </p>
+            </div>
+        </div>
 
+        <!-- Body Content -->
+        <div class="popup-body">
+            <!-- Audio Guide Section -->
+            <div class="audio-guide" id="audioGuideSection">
+                <h4>🎧 Audio Guide</h4>
+                <div class="audio-controls">
+                    <button class="audio-btn" onclick="playAudio()" id="playBtn">▶ Play</button>
+                    <button class="audio-btn" onclick="pauseAudio()" id="pauseBtn" style="display:none;">⏸ Pause</button>
+                    <button class="audio-btn" onclick="stopAudio()">⏹ Stop</button>
+                    <span id="audioTime">00:00 / 00:00</span>
+                </div>
+                <div class="audio-progress">
+                    <div class="audio-progress-bar" id="audioProgressBar"></div>
+                </div>
+                <audio id="monasteryAudio" preload="metadata" onended="audioEnded()"></audio>
+            </div>
 
-    <!--This is the popup modal-->
-    <!-- Popup Modal -->
-    <div id="popup" class="popup hidden">
-        <div class="popup-content">
-            <!-- Close Button -->
-            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <!-- Main Description -->
+            <div style="margin-bottom: 25px;">
+                <p id="popupDescription" style="font-size: 1.1rem; line-height: 1.8; color: #444;"></p>
+            </div>
 
-            <!-- Monastery Details -->
-            <img id="popupImage" src="" alt="Monastery" class="popup-img">
-            <h2 id="popupTitle"></h2>
-            <p id="popupLocation"></p>
-            <p id="popupDescription"></p>
+            <!-- Info Grid -->
+            <div class="monastery-info-grid">
+                <!-- History Card -->
+                <div class="info-card">
+                    <h4>📜 History & Heritage</h4>
+                    <p><strong>Founded:</strong> <span id="founded"></span></p>
+                    <p><strong>Founder:</strong> <span id="founder"></span></p>
+                    <p><strong>Lineage:</strong> <span id="lineage"></span></p>
+                    <p><strong>Significance:</strong> <span id="significance"></span></p>
+                </div>
+
+                <!-- Visiting Info Card -->
+                <div class="info-card">
+                    <h4>ℹ️ Visiting Information</h4>
+                    <p><strong>Opening Hours:</strong> <span id="openingHours"></span></p>
+                    <p><strong>Entry Fee:</strong> <span id="entryFee"></span></p>
+                    <p><strong>Best Time:</strong> <span id="bestTime"></span></p>
+                    <p><strong>Duration:</strong> <span id="duration"></span></p>
+                    <p><strong>Distance from Gangtok:</strong> <span id="distance"></span></p>
+                </div>
+
+                <!-- Architecture Card -->
+                <div class="info-card">
+                    <h4>🏛️ Architecture</h4>
+                    <p><strong>Style:</strong> <span id="archStyle"></span></p>
+                    <p><strong>Features:</strong></p>
+                    <ul id="features"></ul>
+                </div>
+
+                <!-- Travel Info Card -->
+                <div class="info-card">
+                    <h4>🚗 How to Reach</h4>
+                    <p><strong>Transportation:</strong> <span id="transportation"></span></p>
+                    <p><strong>Travel Time:</strong> <span id="travelTime"></span></p>
+                    <p><strong>Nearby Attractions:</strong> <span id="nearbyAttractions"></span></p>
+                </div>
+            </div>
+
+            <!-- Photo Gallery -->
+            <div class="photo-gallery">
+                <h4>📸 Photo Gallery</h4>
+                <div class="gallery-grid" id="photoGallery">
+                    <!-- Images will be added dynamically -->
+                </div>
+            </div>
+
+            <!-- Festivals Section -->
+            <div class="festivals-section">
+                <h4>🎭 Festivals & Events</h4>
+                <div id="festivalsContainer">
+                    <!-- Festivals will be added dynamically -->
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
-    <script>
-        function openPopup(name, location, description, image) {
-            document.getElementById('popupTitle').textContent = name;
-            document.getElementById('popupLocation').textContent = location;
-            document.getElementById('popupDescription').textContent = description;
-            document.getElementById('popupImage').src = image;
 
-            document.getElementById('popup').classList.remove('hidden');
+
+  <script>
+    let currentAudio = null;
+
+    function openPopup(monasteryId) {
+        // Get monastery data from your monastery-data.js
+        const monastery = MonasteryAPI.getMonasteryById(monasteryId);
+        
+        if (!monastery) {
+            console.error('Monastery not found:', monasteryId);
+            return;
         }
 
-        function closePopup() {
-            document.getElementById('popup').classList.add('hidden');
+        // Populate basic info
+        document.getElementById('popupTitle').textContent = monastery.name.english;
+        document.getElementById('locationText').textContent = monastery.location.address;
+        document.getElementById('popupMainImage').src = monastery.images.main;
+        document.getElementById('popupDescription').textContent = monastery.description.english;
+
+        // Populate history
+        document.getElementById('founded').textContent = monastery.history.founded || 'Unknown';
+        document.getElementById('founder').textContent = monastery.history.founder || 'Unknown';
+        document.getElementById('lineage').textContent = monastery.history.lineage || 'Unknown';
+        document.getElementById('significance').textContent = monastery.history.significance || 'N/A';
+
+        // Populate visiting info
+        document.getElementById('openingHours').textContent = monastery.visitingInfo.openingHours || 'Contact for hours';
+        document.getElementById('entryFee').textContent = monastery.visitingInfo.entryFee || 'Free';
+        document.getElementById('bestTime').textContent = monastery.visitingInfo.bestTimeToVisit || 'Year round';
+        document.getElementById('duration').textContent = monastery.visitingInfo.duration || '1-2 hours';
+        document.getElementById('distance').textContent = monastery.location.distanceFromGangtok || 'N/A';
+
+        // Populate architecture
+        document.getElementById('archStyle').textContent = monastery.architecture?.style || 'Traditional';
+        const featuresList = document.getElementById('features');
+        featuresList.innerHTML = '';
+        if (monastery.architecture?.features) {
+            monastery.architecture.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
         }
-    </script>
+
+        // Populate travel info
+        document.getElementById('transportation').textContent = monastery.travelInfo?.transportation?.join(', ') || 'Taxi, Bus';
+        document.getElementById('travelTime').textContent = monastery.travelInfo?.travelTime || 'Varies';
+        document.getElementById('nearbyAttractions').textContent = monastery.travelInfo?.nearbyAttractions?.join(', ') || 'Various attractions';
+
+        // Setup audio
+        const audioElement = document.getElementById('monasteryAudio');
+        if (monastery.audioGuides?.english) {
+            audioElement.src = monastery.audioGuides.english;
+            document.getElementById('audioGuideSection').style.display = 'block';
+        } else {
+            document.getElementById('audioGuideSection').style.display = 'none';
+        }
+
+        // Populate photo gallery
+        const gallery = document.getElementById('photoGallery');
+        gallery.innerHTML = '';
+        if (monastery.images.gallery) {
+            monastery.images.gallery.forEach(imagePath => {
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.alt = 'Monastery photo';
+                img.className = 'gallery-image';
+                img.onclick = () => openImageModal(imagePath);
+                gallery.appendChild(img);
+            });
+        }
+
+        // Populate festivals
+        const festivalsContainer = document.getElementById('festivalsContainer');
+        festivalsContainer.innerHTML = '';
+        if (monastery.festivals && monastery.festivals.length > 0) {
+            monastery.festivals.forEach(festival => {
+                const festivalDiv = document.createElement('div');
+                festivalDiv.className = 'festival-item';
+                festivalDiv.innerHTML = `
+                    <h5>${festival.name}</h5>
+                    <div class="festival-date">${festival.date}</div>
+                    <p>${festival.description}</p>
+                `;
+                festivalsContainer.appendChild(festivalDiv);
+            });
+        } else {
+            festivalsContainer.innerHTML = '<p>No specific festivals listed for this monastery.</p>';
+        }
+
+        // Show popup
+        document.getElementById('popup').classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closePopup() {
+        document.getElementById('popup').classList.add('hidden');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+        
+        // Stop audio if playing
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentAudio = null;
+        }
+        resetAudioControls();
+    }
+
+    // Audio Controls
+    function playAudio() {
+        const audio = document.getElementById('monasteryAudio');
+        if (audio.src) {
+            currentAudio = audio;
+            audio.play();
+            document.getElementById('playBtn').style.display = 'none';
+            document.getElementById('pauseBtn').style.display = 'inline-block';
+            
+            // Update progress
+            audio.addEventListener('timeupdate', updateProgress);
+        }
+    }
+
+    function pauseAudio() {
+        if (currentAudio) {
+            currentAudio.pause();
+            document.getElementById('playBtn').style.display = 'inline-block';
+            document.getElementById('pauseBtn').style.display = 'none';
+        }
+    }
+
+    function stopAudio() {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            resetAudioControls();
+        }
+    }
+
+    function audioEnded() {
+        resetAudioControls();
+    }
+
+    function resetAudioControls() {
+        document.getElementById('playBtn').style.display = 'inline-block';
+        document.getElementById('pauseBtn').style.display = 'none';
+        document.getElementById('audioProgressBar').style.width = '0%';
+        document.getElementById('audioTime').textContent = '00:00 / 00:00';
+    }
+
+    function updateProgress() {
+        if (currentAudio) {
+            const progress = (currentAudio.currentTime / currentAudio.duration) * 100;
+            document.getElementById('audioProgressBar').style.width = progress + '%';
+            
+            const current = formatTime(currentAudio.currentTime);
+            const total = formatTime(currentAudio.duration);
+            document.getElementById('audioTime').textContent = `${current} / ${total}`;
+        }
+    }
+
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function openImageModal(imagePath) {
+        // Simple image modal
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 2000; display: flex;
+            justify-content: center; align-items: center; cursor: pointer;
+        `;
+        
+        const img = document.createElement('img');
+        img.src = imagePath;
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '90%';
+        img.style.objectFit = 'contain';
+        
+        modal.appendChild(img);
+        modal.onclick = () => modal.remove();
+        document.body.appendChild(modal);
+    }
+</script>
+
+
+   
 
 
 

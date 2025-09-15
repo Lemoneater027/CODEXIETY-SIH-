@@ -210,7 +210,7 @@
   /* Grid for Monasteries */
   .temp {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
   }
 
@@ -358,65 +358,296 @@
 
   /*for modal popup*/
   /* Popup Overlay */
-  .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-  }
+  /* Enhanced Popup Styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+}
 
-  /* Hidden state */
-  .hidden {
-      display: none;
-  }
+.popup.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 
-  /* Popup Box */
-  .popup-content {
-      background: rgba(255, 255, 255, 0.6);
-      padding: 20px;
-      border: 3px solid #333;
-      border-radius: 12px;
-      width: 100%;
-      max-width: 900px;
-      max-height: 80vh;
-      /* limit height to viewport */
-      overflow-y: auto;
-      /* enable vertical scrolling */
-      text-align: center;
-      position: relative;
-  }
+.popup-content {
+    background: white;
+    border-radius: 15px;
+    max-width: 900px;
+    max-height: 90vh;
+    width: 95%;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease;
+}
 
-  body.modal-open {
-      overflow: hidden;
-      /* prevent background scroll */
-  }
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-  /* Close Button */
-  .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-  }
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    color: #666;
+    cursor: pointer;
+    z-index: 1001;
+    background: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
 
-  /* Image */
+.close-btn:hover {
+    color: #DC143C;
+    background: #f5f5f5;
+}
 
-  .popup-img {
-      width: 100%;
-      /* 80% of popup width */
-      height: 500px;
-      /* fixed height */
-      object-fit: contain;
-      /* keeps full image visible */
-      margin: 0 auto 15px auto;
-      /* center horizontally */
-      display: block;
-  }
+/* Popup Header */
+.popup-header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.popup-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 30px 20px 20px;
+}
+
+.popup-title {
+    font-size: 2rem;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.popup-location {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Popup Body */
+.popup-body {
+    padding: 25px;
+}
+
+/* Info Grid */
+.monastery-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.info-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #D4A574;
+}
+
+.info-card h4 {
+    color: #2d1b09;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-card p, .info-card ul {
+    margin: 5px 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.info-card ul {
+    padding-left: 20px;
+}
+
+/* Audio Guide */
+.audio-guide {
+    background: linear-gradient(135deg, #D4A574, #8B4513);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.audio-guide h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.audio-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.audio-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.audio-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.audio-progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.audio-progress-bar {
+    height: 100%;
+    background: white;
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    margin-bottom: 25px;
+}
+
+.photo-gallery h4 {
+    margin-bottom: 15px;
+    color: #2d1b09;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Festivals */
+.festivals-section {
+    background: #fff8e7;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #FFD700;
+}
+
+.festivals-section h4 {
+    color: #8B4513;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.festival-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.festival-item h5 {
+    color: #DC143C;
+    margin-bottom: 5px;
+}
+
+.festival-date {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 98%;
+        max-height: 95vh;
+        margin: 10px;
+    }
+
+    .monastery-info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .popup-title {
+        font-size: 1.5rem;
+    }
+
+    .popup-body {
+        padding: 15px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}

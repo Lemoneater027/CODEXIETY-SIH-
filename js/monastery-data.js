@@ -8,14 +8,11 @@ const MonasteryData = {
             id: "rumtek_monastery",
             name: {
                 english: "Rumtek Monastery",
-                nepali: "रुम्तेक गुम्बा", 
-                hindi: "रुम्तेक मठ",
-                sikkimese: "Rumtek Gompa"
+                
             },
             description: {
-                english: "Rumtek Monastery is the largest monastery in Sikkim and is the seat-in-exile of the Gyalwa Karmapa, head of the Karma Kagyu lineage of Tibetan Buddhism.",
-                nepali: "रुम्तेक गुम्बा सिक्किमको सबैभन्दा ठूलो गुम्बा हो।",
-                hindi: "रुम्तेक मठ सिक्किम का सबसे बड़ा मठ है।"
+                english: "Rumtek Monastery, about 23km from Gangtok, is one of Sikkim's most important Buddhist centers and the seat of the Karma Kagyu lineage. Originally built in the 16th century and rebuilt in the 1960s, it is famous for its golden roof, vibrant Tibetan architecture, and peaceful setting. Inside, you'll find the main prayer hall with murals and a giant Buddha statue the golden Stupa holding relics of the 16th Karmapa and the Nalanda Institute, where monks study and debate. The large courtyard hosts the colorful Cham dances. During festivals like Losar, the monastery offers sweeping views of the Gangtok Valley and the Himalayas.",
+               
             },
             location: {
                 latitude: 27.3389,
@@ -38,19 +35,15 @@ const MonasteryData = {
                 features: ["Golden Stupa", "Main shrine hall", "Monks quarters", "Prayer wheels", "Meditation halls"]
             },
             images: {
-                main: "/images/monasteries/rumtek/main.jpg",
+                main: "images/rumtek.jpg",
                 gallery: [
-                    "/images/monasteries/rumtek/exterior1.jpg",
-                    "/images/monasteries/rumtek/interior1.jpg", 
-                    "/images/monasteries/rumtek/prayer_hall.jpg",
-                    "/images/monasteries/rumtek/monks.jpg",
-                    "/images/monasteries/rumtek/golden_stupa.jpg"
-
+                    "images/rumtek2.jpg",
+                    "images/rumtek3.jpg"
                 ]
             },
             audioGuides: {
-                english: "/audio/guides/rumtek_en.mp3", 
-                hindi: "/audio/guides/rumtek_hi.mp3"
+                english: "audio/guides/rumtekhindi.mp3", 
+                hindi: "audio/guides/rumtek_hi.mp3"
             },
             visitingInfo: {
                 openingHours: "06:00 AM - 06:00 PM",
@@ -74,124 +67,361 @@ const MonasteryData = {
                 {
                     name: "Losar",
                     date: "February/March",
-                    description: "Tibetan New Year celebration"
+                    description: "Tibetan New Year celebration with mask dances"
                 },
                 {
                     name: "Saga Dawa", 
                     date: "May/June",
-                    description: "Buddha's birth, enlightenment, and death"
+                    description: "Celebration of Buddha's birth, enlightenment, and death"
                 }
             ],
             digitalArchives: {
-                manuscripts: ["/archives/rumtek/manuscript1.pdf"],
-                historicalDocs: ["/archives/rumtek/history.pdf"],
-                murals: ["/archives/rumtek/mural1.jpg", "/archives/rumtek/mural2.jpg"]
+                manuscripts: ["archives/rumtek/manuscript1.pdf"],
+                historicalDocs: ["archives/rumtek/history.pdf"],
+                murals: ["archives/rumtek/mural1.jpg", "archives/rumtek/mural2.jpg"]
             },
             featured: true
         },
         
-        // ADD MORE MONASTERIES HERE - Copy this structure for each monastery
         {
-            id: "enchey_monastery",
+            id: "dubdi_monastery",
             name: {
-                english: "Enchey Monastery",
-                nepali: "एन्चे गुम्बा",
-                hindi: "एन्चे मठ", 
-                sikkimese: "Enchey Gompa"
+                english: "Dubdi Monastery",
+                
             },
             description: {
-                english: "Enchey Monastery is an important Nyingma monastery in Gangtok, built in 1909.",
-                nepali: "एन्चे गुम्बा गान्तोकको एक महत्वपूर्ण न्यिंग्मा गुम्बा हो।",
-                hindi: "एन्चे मठ गंगटोक का एक महत्वपूर्ण न्यिंग्मा मठ है।"
+                english: "Dubdi Monastery, also called Yuxam Monastery, is the oldest monastery in Sikkim, founded in 1701 by the Chogyal, King, after the coronation of the first ruler at Yuxam. The name Dubdi means the Retreat. The monastery belongs to the Ningma sect of Tibettan Buddhism. Architecturally, it's a small but historic two-story stone structure with tapering walls and a simple square design. Inside, you'll find old manuscripts, thangkas, scroll paintings, and images of Buddhist deities. The real charm of Dubdi is its location, perched on a hilltop above Yuxam, surrounded by forests, reached by a short uphill track. Visitors often it feel like stepping back in time. For travelers, it's not just about the building, but the spiritual and historical significance. This is where Sikum's Buddhist monarchy began, making it a sacred heritage site.",
+               
             },
             location: {
-                latitude: 27.3314,
-                longitude: 88.6138,
-                address: "Enchey, Gangtok, East Sikkim 737101",
-                district: "East Sikkim", 
-                altitude: "1900m",
-                distanceFromGangtok: "3 km"
+                latitude: 27.3700,
+                longitude: 88.2600,
+                address: "Yuksom, West Sikkim 737113",
+                district: "West Sikkim",
+                altitude: "1800m",
+                distanceFromGangtok: "125 km"
             },
             history: {
-                founded: "1909",
-                founder: "Lama Druptob Karpo",
+                founded: "1701",
+                founder: "Lhatsun Chenpo, Kagyapa Lama, and Kathog Kuntu Zangpo",
                 lineage: "Nyingma",
-                significance: "Guardian deity Mahakala"
+                significance: "First monastery built in Sikkim, coronation site of first Chogyal"
+            },
+            architecture: {
+                style: "Traditional Sikkimese",
+                floors: 2,
+                features: ["Ancient prayer hall", "Historic murals", "Sacred relics", "Traditional architecture"]
             },
             images: {
-                main: "/images/monasteries/enchey/main.jpg",
+                main: "images/dubdi.jpeg",
                 gallery: [
-                    "/images/monasteries/enchey/exterior.jpg",
-                    "/images/monasteries/enchey/interior.jpg"
-                ],
-                virtualTour: ["/images/360-tours/enchey/main_hall.jpg"]
-            },
-            featured: true
-        },
-
-        // Template for adding more monasteries - COPY AND MODIFY THIS:
-        {
-            id: "your_monastery_id", // Use lowercase with underscores
-            name: {
-                english: "Your Monastery Name",
-                nepali: "Nepali Name",
-                hindi: "Hindi Name",
-                sikkimese: "Local Name"
-            },
-            description: {
-                english: "Description in English",
-                nepali: "Description in Nepali", 
-                hindi: "Description in Hindi"
-            },
-            location: {
-                latitude: 0.0000,  // GPS coordinates
-                longitude: 0.0000,
-                address: "Full address",
-                district: "District name",
-                altitude: "Altitude in meters",
-                distanceFromGangtok: "Distance"
-            },
-            history: {
-                founded: "Year founded",
-                founder: "Founder name",
-                lineage: "Buddhist lineage",
-                significance: "Historical significance"
-            },
-            images: {
-                main: "/images/monasteries/folder/main.jpg",
-                gallery: [
-                    "/images/monasteries/folder/image1.jpg",
-                    "/images/monasteries/folder/image2.jpg"
-                    // Add more images
-                ],
-                virtualTour: [
-                    "/images/360-tours/folder/scene1.jpg"
-                    // Add 360° images
+                    "images/dubdi2.jpg",
+                    "images/dubdi3.jpg"
                 ]
             },
             audioGuides: {
-                english: "/audio/guides/monastery_en.mp3",
-                nepali: "/audio/guides/monastery_ne.mp3",
-                hindi: "/audio/guides/monastery_hi.mp3"
+                english: "audio/guides/dubdihindi.mp3",
+                hindi: "audio/guides/dubdi_hi.mp3"
             },
             visitingInfo: {
-                openingHours: "Opening hours",
-                entryFee: "Entry fee",
-                bestTimeToVisit: "Best months",
-                duration: "Visit duration",
+                openingHours: "06:00 AM - 05:00 PM",
+                entryFee: "Free",
+                bestTimeToVisit: "March to May, October to November",
+                duration: "1-2 hours",
                 photography: {
                     exterior: true,
-                    interior: false  // or true
+                    interior: true
                 }
+            },
+            travelInfo: {
+                transportation: ["Taxi", "Private car"],
+                travelTime: "3.5 hours from Gangtok",
+                parking: "Limited",
+                nearbyAttractions: ["Yuksom village", "Khangchendzonga National Park"],
+                accommodation: ["Tourist lodge", "Homestays"]
             },
             festivals: [
                 {
-                    name: "Festival name",
-                    date: "Month/Date",
-                    description: "Festival description"
+                    name: "Buddha Purnima",
+                    date: "May",
+                    description: "Celebration of Buddha's birth"
                 }
             ],
-            featured: false  // Set to true for homepage display
+            featured: true
+        },
+
+        {
+            id: "phensang_monastery",
+            name: {
+                english: "Phensang Monastery",
+                
+            },
+            description: {
+                english: "Phensang Monastery is one of the largest monasteries of the Ningma sect in Sikkim. It was founded in the 18th century during the reign of the third Chogyal, Chagdor Namgyal. Located on a gentle hill slope north of Gangtok, the monastery offers wide views of the surrounding valleys. It houses around 300 monks, making it an active center of Buddhist learning and rituals. Fenzang is especially famous for its annual festival held before the Sikamies New Year, Losung, featuring masked dances, cham, prayers, and cultural performances. For visitors, it's a blend of heritage, spirituality, and vibrant cultural life in Sikkim.",
+            },
+            location: {
+                latitude: 27.7000,
+                longitude: 88.5000,
+                address: "Kabi, North Sikkim 737102",
+                district: "North Sikkim",
+                altitude: "2200m",
+                distanceFromGangtok: "65 km"
+            },
+            history: {
+                founded: "1721",
+                founder: "Lama Jigme Pawo",
+                lineage: "Nyingma",
+                significance: "Important pilgrimage site in North Sikkim"
+            },
+            architecture: {
+                style: "Tibetan Buddhist",
+                floors: 2,
+                features: ["Mountain views", "Prayer wheels", "Traditional paintings", "Meditation halls"]
+            },
+            images: {
+                main: "images/Phensang.jpg",
+                gallery: [
+                    "images/phensang2.jpg",
+                    "images/phensang3.jpg"
+                ]
+            },
+            audioGuides: {
+                english: "audio/guides/phensanghindi.mp3",
+                hindi: "audio/guides/phensang_hi.mp3"
+            },
+            visitingInfo: {
+                openingHours: "05:00 AM - 06:00 PM",
+                entryFee: "Free",
+                bestTimeToVisit: "April to June, September to November",
+                duration: "1-1.5 hours",
+                photography: {
+                    exterior: true,
+                    interior: true
+                }
+            },
+            travelInfo: {
+                transportation: ["Taxi", "Shared jeep"],
+                travelTime: "2 hours from Gangtok",
+                parking: "Available",
+                nearbyAttractions: ["Kabi Longstok", "Seven Sisters Waterfalls"],
+                accommodation: ["Hotel in Mangan", "Homestays"]
+            },
+            festivals: [
+                {
+                    name: "Drupka Teshi",
+                    date: "July/August",
+                    description: "First teaching of Buddha"
+                }
+            ],
+        
+            featured: true
+        
+    },
+
+        {
+            id: "kartok_monastery",
+            name: {
+                english: "Kartok Monastery",
+            }, 
+            description: {
+                english: "Kartok Monastery is a small but culturally significant monastery located in Yuksem, West Sikkim. It was established by one of the three revered lamas who crowned the first Chogyal, king of Sikkim in the 17th century. The monastery follows the Nyingma sect of Tibetan Buddhism. Though modest in size, it is an important spiritual site for locals and is surrounded by natural beauty lush forests and a serene landscape. A highlight for visitors is the nearby Kartok Lake, considered sacred, adding to the monastery's charm and peaceful atmosphere.",
+               
+            },
+            location: {
+                latitude: 27.4500,
+                longitude: 88.4500,
+                address: "Kartok, East Sikkim 737132",
+                district: "East Sikkim",
+                altitude: "1700m",
+                distanceFromGangtok: "35 km"
+            },
+            history: {
+                founded: "1675",
+                founder: "Kartok Lama",
+                lineage: "Kartok (Kagyu)",
+                significance: "Center of Kartok tradition in Sikkim"
+            },
+            architecture: {
+                style: "Traditional Tibetan",
+                floors: 3,
+                features: ["Ornate carvings", "Traditional murals", "Prayer hall", "Library"]
+            },
+            images: {
+                main: "images/Kartok.jpg",
+                gallery: [
+                    "images/kartok2.jpg",
+                    "images/kartok3.jpg"
+                ]
+            },
+            audioGuides: {
+                english: "audio/guides/kartokhindi.mp3",
+                hindi: "audio/guides/kartok_hi.mp3"
+            },
+            visitingInfo: {
+                openingHours: "06:00 AM - 06:00 PM",
+                entryFee: "Free",
+                bestTimeToVisit: "March to May, September to November",
+                duration: "1-2 hours",
+                photography: {
+                    exterior: true,
+                    interior: false
+                }
+            },
+            travelInfo: {
+                transportation: ["Taxi", "Private car"],
+                travelTime: "1 hour from Gangtok",
+                parking: "Available",
+                nearbyAttractions: ["Tsomgo Lake", "Baba Harbhajan Singh Temple"],
+                accommodation: ["Hotels in Gangtok"]
+            },
+            festivals: [
+                {
+                    name: "Kartok Festival",
+                    date: "October",
+                    description: "Annual monastery festival with traditional dances"
+                }
+            ],
+       
+            featured: true
+        },
+        
+        {
+            id: "phodong_monastery",
+            name: {
+                english: "Phodong Monastery"
+                
+            },
+            description: {
+                english: "Phodong Monastery, situated in North Sikkim near Gangtok, is one of the oldest and most revered monasteries in the region. It belongs to the Kagyu sect of Tibetan Buddhism, which emphasizes meditation and monastic discipline. Originally established in the 16th century, it was reconstructed in the 18th century and has since remained a vital center for spiritual learning and rituals. The monastery sits on a gentle hillside, surrounded by lush forests and rolling hills, offering visitors a tranquil atmosphere ideal for meditation and reflection. Inside, Fodang houses intricate thangkas, ancient scriptures, and statues of Buddhist deities, showcasing centuries-old artistic and religious traditions. Fodong is also well known for its annual festivals, particularly the masked dances called Cham, which depict stories from Buddhist mythology. These festivals draw both locals and tourists, providing a glimpse into the rich cultural and spiritual heritage of Sikkim.",
+                
+            },
+            location: {
+                latitude: 27.6000,
+                longitude: 88.5500,
+                address: "Phodong, North Sikkim 737133",
+                district: "North Sikkim",
+                altitude: "1500m",
+                distanceFromGangtok: "38 km"
+            },
+            history: {
+                founded: "1740",
+                founder: "Chagdor Namgyal",
+                lineage: "Kagyu",
+                significance: "Royal monastery of former Sikkimese rulers"
+            },
+            architecture: {
+                style: "Royal Sikkimese",
+                floors: 4,
+                features: ["Ancient murals", "Royal chambers", "Traditional library", "Golden stupas"]
+            },
+            images: {
+                main: "images/Phodong.jpg",
+                gallery: [
+                    "images/phodong1.jpg",
+                    "images/phodong2.jpg"
+                ]
+            },
+            audioGuides: {
+                english: "audio/guides/Phodonghindi.mp3",
+                hindi: "audio/guides/phodong_hi.mp3"
+            },
+            visitingInfo: {
+                openingHours: "06:00 AM - 05:00 PM",
+                entryFee: "₹20 for Indians, ₹50 for foreigners",
+                bestTimeToVisit: "March to May, September to November",
+                duration: "2-3 hours",
+                photography: {
+                    exterior: true,
+                    interior: true
+                }
+            },
+            travelInfo: {
+                transportation: ["Taxi", "Shared jeep"],
+                travelTime: "1.5 hours from Gangtok",
+                parking: "Available",
+                nearbyAttractions: ["Labrang Monastery", "Seven Sisters Waterfalls"],
+                accommodation: ["Hotels in Mangan"]
+            },
+            festivals: [
+                {
+                    name: "Phodong Chaam",
+                    date: "December",
+                    description: "Annual masked dance festival"
+                }
+            ],
+            featured: true
+        },
+
+        {
+            id: "tashiding_monastery",
+            name: {
+                english: "Tashiding Monastery",
+                
+            },
+            description: {
+                english: "Tashiding Monastery is located in South Sikkim, near the town of Namche, and is one of the most sacred monasteries in the state. Founded in the 17th century by Lama Lhatsun Chempo, it belongs to the Nyingma sect of Tibetan Buddhism. The name Tashiding means the devoted to auspiciousness, reflecting its spiritual significance. The monastery is perched on a hilltop overlooking the Rangit River Valley, surrounded by dense forests and rolling hills. Its serene location adds to its spiritual aura, making it a major pilgrimage site. Inside, visitors can see ancient scriptures, beautiful thangkas, and statues of Buddhist deities, all maintained with traditional care. Tashiding is famous for the Bumchu festival, held annually around February or March, when a sacred water vase is opened to predict the year's fortunes. The monastery's architecture, peaceful environment, and panoramic views attract both pilgrims and tourists.",
+               
+            },
+            location: {
+                latitude: 27.3000,
+                longitude: 88.2000,
+                address: "Tashiding, West Sikkim 737113",
+                district: "West Sikkim",
+                altitude: "1465m",
+                distanceFromGangtok: "118 km"
+            },
+            history: {
+                founded: "1717",
+                founder: "Ngadak Sempa Chenpo",
+                lineage: "Nyingma",
+                significance: "Sacred site blessed by Guru Rinpoche"
+            },
+            architecture: {
+                style: "Traditional Nyingma",
+                floors: 2,
+                features: ["Sacred chortens", "Prayer flags", "Mountain views", "Holy water ceremony site"]
+            },
+            images: {
+                main: "images/Tashiding.png",
+                gallery: [
+                    "images/tashiding2.jpg",
+                    "images/tashiding3.jpg"
+                ]
+            },
+            audioGuides: {
+                english: "audio/guides/taishidinghindi.mp3",
+                hindi: "audio/guides/taishidinghindi.mp3"
+            },
+            visitingInfo: {
+                openingHours: "06:00 AM - 06:00 PM",
+                entryFee: "Free",
+                bestTimeToVisit: "October to May",
+                duration: "2-3 hours",
+                photography: {
+                    exterior: true,
+                    interior: true
+                }
+            },
+            travelInfo: {
+                transportation: ["Taxi", "Private car"],
+                travelTime: "3 hours from Gangtok",
+                parking: "Limited",
+                nearbyAttractions: ["Khecheopalri Lake", "Pemayangtse Monastery"],
+                accommodation: ["Hotels in Pelling", "Monastery guest house"]
+            },
+            festivals: [
+                {
+                    name: "Bhumchu",
+                    date: "February/March",
+                    description: "Sacred water ceremony for prosperity prediction"
+                },
+                {
+                    name: "Saga Dawa",
+                    date: "May/June",
+                    description: "Most auspicious festival with special significance"
+                }
+            ],
+            featured: true
         }
     ],
 
@@ -211,11 +441,28 @@ const MonasteryData = {
                 nepali: "मुखौटा नृत्य र प्रार्थनाको साथ पारम्परिक तिब्बती नयाँ वर्ष मनाइन्छ",
                 hindi: "मुखौटा नृत्य और प्रार्थना के साथ पारंपरिक तिब्बती नव वर्ष"
             },
-            monasteries: ["rumtek_monastery", "enchey_monastery"],
+            monasteries: ["rumtek_monastery", "phensang_monastery", "phodong_monastery"],
             bookingRequired: true,
             maxParticipants: 100
+        },
+        {
+            id: "bhumchu_2025",
+            name: {
+                english: "Bhumchu Festival",
+                nepali: "भुम्चु पर्व",
+                hindi: "भुम्चु त्योहार"
+            },
+            date: "2025-02-20",
+            location: "Tashiding Monastery",
+            description: {
+                english: "Sacred water ceremony where the level of holy water predicts the year's prosperity",
+                nepali: "पवित्र पानीको समारोह जसले वर्षको समृद्धिको भविष्यवाणी गर्छ",
+                hindi: "पवित्र जल समारोह जो वर्ष की समृद्धि की भविष्यवाणी करता है"
+            },
+            monasteries: ["tashiding_monastery"],
+            bookingRequired: false,
+            maxParticipants: 200
         }
-        // ADD MORE EVENTS HERE
     ],
 
     // Travel routes and attractions
@@ -235,8 +482,22 @@ const MonasteryData = {
                 sharedJeep: "₹50-80",
                 privateCar: "₹1200-1500"
             }
+        },
+        {
+            id: "gangtok_to_tashiding",
+            name: "Gangtok to Tashiding Monastery", 
+            distance: "118 km",
+            duration: "3 hours",
+            route: [
+                {lat: 27.3389, lng: 88.6065, name: "Gangtok"},
+                {lat: 27.3000, lng: 88.2000, name: "Tashiding Monastery"}
+            ],
+            transportOptions: ["Taxi", "Private Car"],
+            cost: {
+                taxi: "₹2500-3000",
+                privateCar: "₹3500-4000"
+            }
         }
-        // ADD MORE ROUTES
     ],
 
     // Digital archives metadata
@@ -249,10 +510,19 @@ const MonasteryData = {
                 language: "Tibetan",
                 period: "18th Century",
                 description: "Religious text on Buddhist philosophy",
-                file: "/archives/manuscripts/ms_001.pdf",
-                thumbnail: "/archives/thumbnails/ms_001.jpg"
+                file: "archives/manuscripts/ms_001.pdf",
+                thumbnail: "archives/thumbnails/ms_001.jpg"
+            },
+            {
+                id: "manuscript_002",
+                title: "Phodong Royal Chronicles",
+                monastery: "phodong_monastery",
+                language: "Tibetan",
+                period: "17th Century",
+                description: "Historical chronicles of Sikkimese royalty",
+                file: "archives/manuscripts/ms_002.pdf",
+                thumbnail: "archives/thumbnails/ms_002.jpg"
             }
-            // ADD MORE MANUSCRIPTS
         ],
         murals: [
             {
@@ -261,10 +531,18 @@ const MonasteryData = {
                 monastery: "rumtek_monastery",
                 location: "Main Prayer Hall",
                 description: "Detailed murals depicting Buddha's life",
-                images: ["/archives/murals/mural_001_1.jpg"],
-                highRes: ["/archives/murals/hires/mural_001_1.jpg"]
+                images: ["archives/murals/mural_001_1.jpg"],
+                highRes: ["archives/murals/hires/mural_001_1.jpg"]
+            },
+            {
+                id: "mural_002", 
+                title: "Tashiding Sacred Art",
+                monastery: "tashiding_monastery",
+                location: "Inner Sanctum",
+                description: "Ancient murals showing Guru Rinpoche's teachings",
+                images: ["archives/murals/mural_002_1.jpg"],
+                highRes: ["archives/murals/hires/mural_002_1.jpg"]
             }
-            // ADD MORE MURALS
         ]
     }
 };
