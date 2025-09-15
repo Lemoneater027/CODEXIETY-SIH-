@@ -315,15 +315,23 @@ body {
     justify-content: center;
 }
 
+.hero-buttons .btn-primary a {
+    color: white;   
+    text-decoration: none; 
+}
+.hero-buttons .btn-secondary a {
+    color: white;   
+    text-decoration: none; 
+}
 .btn-primary {
-    background: rgb(246, 64, 64);
     color: white;
+    background: rgb(246, 64, 64);
     box-shadow: var(--shadow);
 }
 
 .btn-secondary {
     background: transparent;
-    color: rgb(27, 15, 208);
+    color: white;
     border: 2px solid white;
 }
 

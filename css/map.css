@@ -197,7 +197,7 @@
     opacity: 1;
 }
 .footer {
-    background: var(--text-dark);
+    background: #2C1810;
     color: white;
     padding: 60px 2rem 20px;
 }
