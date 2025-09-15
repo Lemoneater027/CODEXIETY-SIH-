@@ -1,59 +1,58 @@
 const express = require('express');
+const Monastery = require('../models/monastery');
+
 const router = express.Router();
-const path = require('path');
-const fs = require('fs');
 
-// Read monastery data from frontend file
-function getMonasteryData() {
+// Get all monasteries
+router.get('/', async (req, res) => {
     try {
-        const dataPath = path.join(__dirname, '../../frontend/js/monastery-data.js');
-        const fileContent = fs.readFileSync(dataPath, 'utf8');
-        
-        // Extract the MonasteryData object from the file
-        // This is a simple way to read the data
-        const match = fileContent.match(/const MonasteryData = ({[\s\S]*?});/);
-        if (match) {
-            const dataString = match[1];
-            // Use eval carefully (only for development)
-            const data = eval('(' + dataString + ')');
-            return data;
-        }
-        return { monasteries: [] };
-    } catch (error) {
-        console.error('Error reading monastery data:', error);
-        return { monasteries: [] };
-    }
-}
+        const { 
+            district, 
+            featured, 
+            search, 
+            limit = 10,
+            page = 1 
+        } = req.query;
 
-// GET /api/monasteries - Get all monasteries
-router.get('/', (req, res) => {
-    try {
-        const data = getMonasteryData();
-        const { district, featured, limit } = req.query;
-        
-        let monasteries = data.monasteries || [];
-        
-        // Filter by district
+        let query = { status: 'active' };
+
+        // Filters
         if (district && district !== 'all') {
-            monasteries = monasteries.filter(m => 
-                m.location.district.toLowerCase() === district.toLowerCase()
-            );
+            query['location.district'] = new RegExp(district, 'i');
         }
         
-        // Filter featured
         if (featured === 'true') {
-            monasteries = monasteries.filter(m => m.featured);
+            query.featured = true;
         }
         
-        // Limit results
-        if (limit) {
-            monasteries = monasteries.slice(0, parseInt(limit));
+        if (search) {
+            query.$or = [
+                { 'name.english': new RegExp(search, 'i') },
+                { 'description.english': new RegExp(search, 'i') }
+            ];
         }
-        
+
+        // Pagination
+        const pageSize = parseInt(limit);
+        const skip = (parseInt(page) - 1) * pageSize;
+
+        const [monasteries, total] = await Promise.all([
+            Monastery.find(query)
+                .skip(skip)
+                .limit(pageSize)
+                .sort({ featured: -1, createdAt: -1 }),
+            Monastery.countDocuments(query)
+        ]);
+
         res.json({
             success: true,
-            count: monasteries.length,
-            data: monasteries
+            data: monasteries,
+            pagination: {
+                page: parseInt(page),
+                limit: pageSize,
+                total,
+                pages: Math.ceil(total / pageSize)
+            }
         });
     } catch (error) {
         res.status(500).json({
@@ -63,11 +62,16 @@ router.get('/', (req, res) => {
     }
 });
 
-// GET /api/monasteries/:id - Get specific monastery
-router.get('/:id', (req, res) => {
+// Get monastery by ID or slug
+router.get('/:identifier', async (req, res) => {
     try {
-        const data = getMonasteryData();
-        const monastery = data.monasteries.find(m => m.id === req.params.id);
+        const { identifier } = req.params;
+        
+        const query = identifier.match(/^[0-9a-fA-F]{24}$/) 
+            ? { _id: identifier }
+            : { slug: identifier };
+
+        const monastery = await Monastery.findOne(query);
         
         if (!monastery) {
             return res.status(404).json({
@@ -75,7 +79,11 @@ router.get('/:id', (req, res) => {
                 error: 'Monastery not found'
             });
         }
-        
+
+        // Increment view count
+        monastery.statistics.views += 1;
+        await monastery.save();
+
         res.json({
             success: true,
             data: monastery
@@ -88,23 +96,36 @@ router.get('/:id', (req, res) => {
     }
 });
 
-// GET /api/monasteries/search/:query - Search monasteries
-router.get('/search/:query', (req, res) => {
+// Get monastery coordinates for map
+router.get('/map/coordinates', async (req, res) => {
     try {
-        const data = getMonasteryData();
-        const query = req.params.query.toLowerCase();
-        
-        const results = data.monasteries.filter(monastery => 
-            monastery.name.english.toLowerCase().includes(query) ||
-            monastery.description.english.toLowerCase().includes(query) ||
-            monastery.location.district.toLowerCase().includes(query)
+        const monasteries = await Monastery.find(
+            { status: 'active' },
+            {
+                'name.english': 1,
+                'location.coordinates': 1,
+                'location.district': 1,
+                'images.main': 1,
+                'featured': 1,
+                'slug': 1
+            }
         );
-        
+
+        const coordinates = monasteries.map(m => ({
+            id: m._id,
+            name: m.name.english,
+            slug: m.slug,
+            lat: m.location.coordinates.latitude,
+            lng: m.location.coordinates.longitude,
+            district: m.location.district,
+            image: m.images.main,
+            featured: m.featured
+        }));
+
         res.json({
             success: true,
-            query: req.params.query,
-            count: results.length,
-            data: results
+            count: coordinates.length,
+            data: coordinates
         });
     } catch (error) {
         res.status(500).json({
