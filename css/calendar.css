@@ -177,6 +177,19 @@ body {
 .event-info {
     padding: 1rem;
     flex: 1;
+
+}
+.event-info button{
+    background-color: yellow;
+     padding: 12px 28px;
+  border: none;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
 }
 
 .footer {
