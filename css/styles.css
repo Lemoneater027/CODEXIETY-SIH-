@@ -959,3 +959,27 @@ body {
   position: relative;
   z-index: 1;  /* taaki text overlay ke upar aaye */
 }
+.login-btn {
+  display: inline-block;
+  padding: 10px 15px;         /* button size */
+  font-size: 18px;            /* text size */
+  font-weight: bold;
+  color: white;               /* text color */
+  background: linear-gradient(135deg, #cac006, goldenrod); /* gradient button */
+  border: 2px solid #f4e406; /* border */
+  border-radius: 8px;         /* rounded corners */
+  text-decoration: none;      /* remove underline */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  transform: scale(1.05);   /* slight zoom on hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.login-btn:active {
+  transform: scale(0.95);   /* press-in effect */
+}
